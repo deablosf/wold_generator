@@ -1,4 +1,5 @@
 // Okay This will be a culture generator
+// Now lets turn the first five into a working thing!
 
 //Table 1: Climates 8
 const climate = [
