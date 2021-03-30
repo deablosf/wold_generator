@@ -28,7 +28,7 @@ const zones = {
 
 //Table 2: Ten populace
 const populace = [
-    "Nanoscopic", "Microscopic", "Tiny", "Miniature", "Medium (Base)", "Large", "Giant", "Huge", "Massive", "Titanic"
+    "Nanoscopic", "Microscopic", "Tiny", "Miniature", "Medium", "Large", "Giant", "Huge", "Massive", "Titanic"
 ];
 
 // For Table 2
@@ -66,31 +66,55 @@ const locationScope =  [
 ];
 
 //Table 7: Military Quirks
-const nameName = []
+const nameName1 = []
 //Table 8:
-const nameName = []
+const nameName2 = []
 
 //Table 9:
-const nameName = []
+const nameName3 = []
 
 //Table 10:
-const nameName = []
+const nameName4 = []
 
 //Table 11:
-const nameName = []
+const nameName5 = []
 
 //Table 12:
-const nameName = []
+const nameName6 = []
 
 //Table 13:
-const nameName = []
+const nameName7 = []
 
 //Table 14:
-const nameName = []
+const nameName8 = []
 
 //Table 15:
-const nameName = []
+const nameName9 = []
 
 // ===================== Code SECTION =====================================
 
-console.log (locationScope[5])
+//console.log (populace[5])
+
+const randN = (x) => {
+    var min = 0,
+        max = x,
+        num = Math.floor(Math.random() * (max - min) + min);
+        return num;
+    // console.log(score);
+};
+
+const generate = () => {
+  climate1 = climate[randN(9)]
+  populace1 = populace[randN(11)]
+  physChar = physicalCharacteristics[randN(21)]
+  extraOrdAbil = extraordinaryAbilities[randN(21)]
+  drawBacks = populaceDrawbacks[randN(21)]
+
+  console.log("Your World is " + climate1)
+  console.log("Your people are " + populace1 + ": " + sizes[populace1])
+  console.log("They have a " + physChar)
+  console.log("Their extra ordinary Ability is " + extraOrdAbil + ". But they have the " + drawBacks + " Drawback.")
+
+}
+
+generate()
