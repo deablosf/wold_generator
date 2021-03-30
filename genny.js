@@ -50,6 +50,8 @@ const physicalCharacteristics = [
     "Head Variants", "Arm Variants", "Leg Variants", "Eye Variants", "Ear Variants", "Tongue Variants", "Mouth Variants", "Skin Color Variants", "Skin Texture Variants", "Hand Variants", "Animal Forms", "Extra Organs", "Extreme Appearance", "Non-Solid Form", "Tail", "Wings", "Chynerid", "Proxy Sense", "Long Limbs", "Fins"
 ];
 
+// For Table 3
+
 //Table 4: Extraordinary Abilities 20
 const extraordinaryAbilities = [
     "Carrier", "Enhanced Senses", "Environmental Adaptation", "Expert Athelte", "Alternative Mobility", "Sight Variants", "Claw Variants", "Gaze Variants", "Bite Variants", "Natural Defense", "Superior", "Legendary Atavism", "Surge", "Adept", "Quills/Barbs", "Increased Speed", "Extended Lifespan", "Regeneration", "Naturebound", "Elastic Form"
