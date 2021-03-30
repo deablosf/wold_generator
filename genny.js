@@ -3,14 +3,24 @@
 
 //Table 1: Climates 8
 const climate = [
-    "Standard: (Ice Cap, Boreal, Temperate, Dry, Tropical)",
-    "Infernal: (Temperate, Dry, Tropical, Torrid, Molten)",
-    "Sweltering: (Boreal, Temperate, Dry, Tropical, Torrid)",
-    "Frosty: (Hyperborean, Ice Cap, Boreal, Temperate, Dry)",
-    "Fimbulfrost: (Frozen, Hyperborean, Ice Cap, Boreal, Temperate)",
-    "Molten: (Torrid, Molten, Molten, Molten, Molten)",
-    "Ice: (Frozen, Frozen, Frozen, Frozen, Hyperborean)",
-    "Custom Major"
+    "Standard",
+    "Infernal",
+    "Sweltering",
+    "Frosty",
+    "Fimbulfrost",
+    "Molten",
+    "Ice",
+    "Custom Major",
+    {
+      0: "Ice Cap, Boreal, Temperate, Dry, Tropical",
+      1: "Temperate, Dry, Tropical, Torrid, Molten",
+      2: "Boreal, Temperate, Dry, Tropical, Torrid",
+      3: "Hyperborean, Ice Cap, Boreal, Temperate, Dry",
+      4: "Frozen, Hyperborean, Ice Cap, Boreal, Temperate",
+      5: "Torrid, Molten, Molten, Molten, Molten",
+      6: "Frozen, Frozen, Frozen, Frozen, Hyperborean",
+      7: "Choose as you see fit!"
+    }
 ];
 
 //For Table 1; there are nine zones
@@ -106,13 +116,14 @@ const randN = (x) => {
 };
 
 const generate = () => {
-  climate1 = climate[randN(9)]
-  populace1 = populace[randN(11)]
-  physChar = physicalCharacteristics[randN(21)]
-  extraOrdAbil = extraordinaryAbilities[randN(21)]
-  drawBacks = populaceDrawbacks[randN(21)]
+  first = randN(8)
+  climate1 = climate[first]
+  populace1 = populace[randN(10)]
+  physChar = physicalCharacteristics[randN(20)]
+  extraOrdAbil = extraordinaryAbilities[randN(20)]
+  drawBacks = populaceDrawbacks[randN(20)]
 
-  console.log("Your World is " + climate1)
+  console.log("Your World is " + climate1 + ": " + climate[8][first])
   console.log("Your people are " + populace1 + ": " + sizes[populace1])
   console.log("They have a " + physChar)
   console.log("Their extra ordinary Ability is " + extraOrdAbil + ". But they have the " + drawBacks + " Drawback.")
