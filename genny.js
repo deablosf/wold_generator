@@ -1,6 +1,11 @@
 // Okay This will be a culture generator
 // Now lets turn the first five into a working thing!
 
+
+let userChoice = {
+
+}
+
 //Table 1: Climates 8
 const climate = [
     "Standard",
@@ -103,12 +108,16 @@ const nameName8 = []
 //Table 15:
 const nameName9 = []
 
+let phys = {
+  Head: ["Extra", "Cosmetic", "Combat"]
+}
+
 // ===================== Code SECTION =====================================
 
 //console.log (populace[5])
 
 const randN = (x) => {
-    var min = 0,
+    let min = 0,
         max = x,
         num = Math.floor(Math.random() * (max - min) + min);
         return num;
