@@ -152,10 +152,31 @@ const leadershipQuirks = [
   "When a member of the ruling class dies, any money in excess of what is spent on funerary ceremony is passed down to the commoners of their society.",
   "The ruling class always die at the age of sixty five. The age of sixty four is spent putting their affairs in order before honorably ending their lives before the end of their sixty fifth year.",
   "The ruling class has tied their lives to the health of the nation. As it grows strong and robust, so to does the noblitiy."
-]
+];
 
 //Table 10: Superstitions 20 quirks
-const superstitions = []
+const superstitions = [
+  "Never allow a parent that has lost their child to look your child in the eyes or they will steal the child's soul and use it to bring a cursed clone to life.",
+  "A child cannot sleep away from their parents for the first three years of their life or an apparition will steal them and leave a shadow copy.",
+  "When a marriage ends each party must marry an animal to clear any curses or lingering negative energy from their ex. During the honeymoon, they must sacrifice their new beastly partner to the family of their ex-spouse. This will purify them and allow to remarry clean of any ill-wishes.",
+  "No one can be outside at midnight on the night of a new moon or they will disappear for one hundred years.",
+  "Before undertaking any major project, all people and tools involved must bathe thoroughly in alcohol and purified, holy water to banish all evil spirts and gremlins.",
+  "The firstborn of two firstborn parents will grow to be a criminal.",
+  "Should any but the enlightened ones ingest the sacred, forbidden herbs and plants they will suffer visions that will drive them to insanity and death.",
+  "An item held in the possession of a person for more than a year becomes a part of their essence and a part of them.",
+  "If a person goes to bed three times with an empty stomach, on the third daym they will birth a famine spirit that breaks things and eats their essence. This ravenous spirit grows stronger if the being that gave them life dies of starvation.",
+  "The twin headed rose is lucky when plucked in the summer but can bring it's owner death if accepted in the winter.",
+  "If a threat is made against you, knock on bone to ward of bad luck and ill-intent.",
+  "An owl seen during the day means that a predator in the shape of a person lingers near.",
+  "A salamander tongue, removed from a male salamander by a pregnant woman, placed under the bed of a baby while it sleeps makes the child invisible to demons and protects them from nightmares until the tongue dries out.",
+  "If a criminal asks for forgiveness and is denied nine times, they will come back from the dead as a Hangman's spectre.",
+  "If a widow looks into her reflection within a fortnite of a spouses death, they may speak for one night with the departed but it will cost them one year of their life.",
+  "The number nine is unlucky, a gathering of nine invites the dead to join to round the number to ten.",
+  "Odd number groups are auspicious and blessed when bound together.",
+  "No man can kiss a canine, to do so invites the wrath of a Bloodwolf-an insatiable and unerring hunter who will kill him and his family. Only a cat, blinded by its mother, released at high noon can defend against and chase off this otherwise implaccable foe.",
+  "If you spill ground cinnamon, you must pour saltwater on it and sing a funeral dirge to avoid being cursed with bad luck.",
+  "The frostsnare butterfly boasts luxurious crystal latics wings that sound like rapping tapping on a snare drum. If it lands on you and plays a 'solo', you have heard the Progenitor's medley and will be a parent soon. If it lands on you and is silent, it means death will touch your life very soon."
+];
 
 //Table 11:
 const nameName5 = []
