@@ -107,7 +107,7 @@ const militaryQuirks = [
 ];
 
 //Table 8: Cultural Quirks 20 quirks 
-const nameName2 = [
+const culturalQuirks = [
   "People may not speak to one another directly, they must speak through a proxy. To knowingly misrepresent someone's message is a cardinal taboo akin to cannibalism.",
   "When emotionally overwhelmed, the people speak in a seperate language only used in those emotional moments. To outsiders it is gibberish.",
   "Leaders are selected to greater council positions from eight to twelve years of age, lesser council positions from thirteen to eighteen and local leader positions from nineteen to twenty-nine. From the ages of thirty onward they are barred from positions of leadership but may take advisory positions.",
@@ -217,12 +217,17 @@ const generate = () => {
   extraOrdAbil = extraordinaryAbilities[randN(20)]
   drawBacks = populaceDrawbacks[randN(20)]
   scope = locationScope[randN(6)]
+  military = militaryQuirks[randN(20)]
+  culture  = culturalQuirks[randN(20)]
+  leadership = leadershipQuirks[randN(20)]
+  superstition = superstitions[randN(20)]
 
   console.log("Your World is " + climate1 + ": " + climate[8][first])
   console.log("Your people are " + populace1 + ": " + sizes[populace1])
   console.log("They have a " + physChar)
   console.log("Their extra ordinary Ability is " + extraOrdAbil + ". But they have the " + drawBacks + " Drawback.")
-  console.log("These beings live in a " + scope)
+  console.log("These beings live in a " + scope + ". With a culture that believes " + culture)
+  console.log()
 
 }
 
