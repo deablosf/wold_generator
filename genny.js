@@ -1,6 +1,11 @@
 // Okay This will be a culture generator
 // Now lets turn the first five into a working thing!
 
+const theWorld = document.getElementById('theWorld');
+const theZones = document.getElementById('zones');
+const thePopulace = document.getElementById('populace');
+const theExtra = document.getElementById('extra');
+const thePhysical = document.getElementById('physical');
 
 let userChoice = {
 
@@ -17,13 +22,13 @@ const climate = [
     "Ice",
     "Custom Major",
     {
-      0: "Ice Cap, Boreal, Temperate, Dry, Tropical",
-      1: "Temperate, Dry, Tropical, Torrid, Molten",
-      2: "Boreal, Temperate, Dry, Tropical, Torrid",
-      3: "Hyperborean, Ice Cap, Boreal, Temperate, Dry",
-      4: "Frozen, Hyperborean, Ice Cap, Boreal, Temperate",
-      5: "Torrid, Molten, Molten, Molten, Molten",
-      6: "Frozen, Frozen, Frozen, Frozen, Hyperborean",
+      0: "Ice_Cap Boreal Temperate Dry Tropical",
+      1: "Temperate Dry Tropical Torrid Molten",
+      2: "Boreal Temperate Dry Tropical Torrid",
+      3: "Hyperborean Ice_Cap Boreal Temperate Dry",
+      4: "Frozen Hyperborean Ice_Cap Boreal Temperate",
+      5: "Torrid Molten Molten Molten Molten",
+      6: "Frozen Frozen Frozen Frozen Hyperborean",
       7: "Choose as you see fit!"
     }
 ];
@@ -66,6 +71,119 @@ const physicalCharacteristics = [
 ];
 
 // For Table 3
+const physChara = {
+  // Head Variant
+Extra_Heads: "The creature has additional heads, each subsidiary head has enough intelligence to chew, speak and maintain any action it had already begun as well as look around (weakly). The creature can focus on any single head and make it the new primary head but without 'additional brain' the other heads are pretty much on auto pilot.",
+
+Cosmetic_Adornments: "Horns, Barbs, Swirling lights that rise from the scalp. Anything that makes the head look nice, different but regardless of the choice, it will offer no combat advantage to the species. Horns may be more like nubs, barbs might be brittle, swirling lights aren't bright enough to blind anyone etc.",
+
+Combat_Adornments: "Horns, Barbs, swirling lights that rise from the scalp. While these adornments may not be the prettiest, they are suitable for self-defense. Horns may be long and sharp or blunt, ram-like swirls. Barbs may be like a crocodiles back, boney and hard. The swirling lights may leave targets stunned or blinded etc. Combined with Cosmetic adornments, they are functional in combat AND they can be used as flair to impress or look damn good.",
+
+// Arm Variants
+Extra_Arms: "The species has extra extremities, a safe bet is one extra set of arms each time this characteristic is applied. Too many arms can get unwieldy though and it may become difficult for a single brain to allow for not only 'higher' brain function but controlling so many limbs simultaneously.",
+
+Tentacles: "Instead of regular arms, the creature has tentacles which it can use to grip, swing from or otherwise interact with the world. Combined with extra arms, the creature can have both tentacles AND arms.",
+
+Diarthrotic_Joints: "Every joint of the creature's arms possesses the ability to freely move in all directions.",
+
+// Leg Variants
+Extra_Legs: "The species has additional legs, the safe bet is to grant one extra set of legs each time this characteristic is selected. Too many legs can fall on themselves and it might become difficult for a single brain to be in charge of 'higher' brain functions an all limbs including any extra limbs and organs that species' already possesses.",
+
+Predatory_Legs: "Members of the species can reach higher speeds when running than ungulates and other creatures but are less manueverable and require more effort to change momentum direction.",
+
+Ungulate_Legs: "Members of the species can outpace many creatures but cannot match the speed, accelaration and deceleration of predators. They can, however, adjust with greater ease from one direction to another and outmaneuver chasers and obstacles.",
+
+// Eye Variants
+Insectoid: "The species is not able to see images with great clarity but can see a wide spectrum of light that the human eye does not pick up and can detect movement with almost unparalleled ease. In addition, the species can see in almost 300 degree vision, not quite a full circle, but close.",
+
+Predatory_Cat: "The species has poor vision close up but with about a foot of distance between themselves and what they are looking at, vision will improve. In exchange the species can see as well at night or at times when lights are low or dim.",
+
+Extra_Eyes: "These creatures have additional eyes beyond the standard human pair. While a number is not assigned, it's a safe bet to say that each time this characteristic is applied to a species that they gain up to one additional pair of eyes.",
+
+// Ear Variants
+Large: "These ears are noticeable and out there, whether flared out like an elephant or drooping like a bloodhound. They are structured to catch and filter sounds, allowing the species to hone in on particular sounds and protect them from sudden bursts of sound cases of those with sensitive hearing.",
+
+Pointed: "The pinna of the ear comes to a pronounced point rather than rounding off. The restructuring grants the creature slightly enhanced hearing so they can pick up sounds from further away.",
+
+Antennae: "The species boasts antennae that serve as a truple threat of sensory input. Hearing, seeing, smelling; all can be done through the antenna. This does not elimiinate the existence or use of other sensory organs, just because the species has antennae does not mean they lack eyes necessarily but the antennae serve as the primary organ for these senses and the other organs serve as supplemental, weaker backup.",
+
+// Tongue Variants
+Forked: "The forked tongue allows the creature to supplement efforts by their nose to pick up on finer, faint odors. While it doesn't make them bloodhounds or supertrackers, it does give them a superior sense of smell to play with.",
+
+Frog: "The species has a retractable tongue that can extend 1/3rd the length of their body. Targets grabbed by this tongue have to resist being pulled at a speed that exerts 12Gs of force (meaning the target has to resist it's own weight multiplied by 12) and can possibly be knocked out from the force.",
+
+Stinger: "The species tongue ends in a sharp stinger like a bee or scorpion's tail, it can even be a syringe to inject targets if the creature has a means of producing poisons or chemicals. The tongue isn't any longer than a human tongue however so stabing the target will require some thought on the creature's part.",
+
+// Oral Variants
+Multiple_Mouths: "The creature has more than one mouth, pretty self-explanatory. Each mouth has the ability to chew and bite and with practice and focus, more than one mouth can speak and act at the same time as another. Three or more mouths may require additional brains to control them and without an additional stomach, these mouths may not be able to digest anything it chews on.",
+
+Rows_of_Teeth: "Like a shark, this creature has rows of teeth in their mouth. These rows make chewing easier and while they may have sharper points than most teeth they are not fangs so they won't be serrating or shearing through skin and muscle with any more ease than a human mouth.",
+
+Disposable_Teeth: "Following the shark idea, the creature does not run out of teeth and can sacrifice or lose teeth with no concern for gaps in their maw. These teeth are not much sharper than a human tooth. If the creature also has rows of teeth this process is bloodless, as teeth from a back row move forward to fill the gaps. If the creature doesn't have rows of teeth, there is a small spurt of blood as the new tooth pops through the gums.",
+
+// Skin Color Variants
+Dotted_Patterns: "The creature's skin is colored by Ben-Day dot patterns of various shades.",
+
+Primary_Color: "The creature's skin is colored in a single primary color (Red, Yellow, Blue) but has varying shades and hues.",
+
+Translucent: "The creature has see through skin of varying clarity ranging from milky or foggy to crystal clear. In some cases a lesser layer exists under the skin to keep the internal organs of the creature from being visible but this is not a universal hard rule.",
+
+// Skin Texture Variants
+Bark: "The species has the coarse, rough texture of bark from a tree and carries the same properties. This skin provides a very small level of protection against bludgeoning attacks and impact damage but proves useless against blades and sufficient force. This bark-like skin protects from dehydration and offers a very small level of protection from temperature extremes.",
+
+Scale: "The species has lizard-like scales from head to toe and may have ridges as well. These scales protect against dehydration and offers small levels of protection from cutting and stabbing attacks like the teeth and claws of predators.",
+
+Smooth: "The species has the look and feel of an uncanny material, sculpted into a humanoid facsimilie. The material may offer moderate protection from crushing, stabbing or slashing attacks depending on what the material is. For example, marble skin may protect somewhat against efforts to slash but it does not offer the greatest protection against a club meanwhile steel body protects from a number of physical attacks but not elemental or energy threats. Once the skin has been pierced or broken, the creature's insides are still normal and they will bleed as normal.",
+
+// Hand Variants
+Extra_Digits: "The hands of this species has more than four fingers and a thumb. A six fingered hand to wield the sword that will kill someone's father perhaps or even more, though it is recommended that the species maintain less than 11 on a single hand.",
+
+Webbed_Digits: "The fingers and thumbs of the creature are connected with an interdigital membrane. This helps the species interact with fluids, cupping it more efficently and moving through liquids easier.",
+
+Digging_Claws: "The populace sport non-retractable, durable claws that are suited for digging through natural materials. The creature can move as fast as they can walk comfortably when digging but can go up to their running speed for bursting fits of digging that last for no more than six seconds at a time and require at least four seconds of break time between each burst.",
+
+Animal_Form: "The creature does not start with a humanoid template but instead starts with an animal as the base form. This can be as innocuous as a sheep or as aggressive as a tiger. Keep in mind the base animal's height/length and how it fits on 'Table 2: Size'.",
+
+// Extra Organs:
+Brain: "The species has at least one additional brain, allowing the creature to multitask with ease. The other brains can control individal limbs or work on complex mental actions while the creature is immersed and engaged in other activities. If the creature has additional mouths, then the extra brain can communicate as a seperate entity.",
+
+Heart: "The species has at least one additional heart and cardiovascular network. The heart functions in all ways like the primary heart does however the heart does not need to be active all the time. If more than one heart is active at the same time, the creature is more alert and able to react to situations faster. The danger this creature faces is an exorbitant strain on their lungs with multiple hearts to keep blood oxygenated.",
+
+Stomach: "The creature's body has at least one additional stomach and digestive tract. If the creature has more than one mouth, those mouths can be connected to the supplemental digestive tract. Extra stomachs can be used in a number of ways by the daring and creative.",
+
+// Extreme Appearance
+Ugly: "The creature is hideous, not only horrid to look at but so offensive to the vision of others that they can shock, horrify or even temporarily blind those who view them.",
+
+Beautiful: "The species is stunning in beauty, nearly perfect to behold. Their beauty transcends race or sexual preferencee, it may even surpass species. This is not a form of mind control however, while many are willing to bend and obey for the creature, most people will not simply do what the species says. They are more inclined to want to please the creature and certainly will not die for them (without some other incentive or reason).",
+
+Feranthrope: "The species is anthromorphic, an animal imbued with humanoid traits. This species is physically superior to the average human but also must tend to stronger instinctual pulls and demands such as mating seasons, hibernations and even territorial demands.",
+
+// Non-Solid Form
+Gaseous: "The species can enter into and maintain a humanoid shape through discipline and focus but in their natural state the creatures are gas and vapor. If dispersed, they can reform in time, anywhere from a day to a week, though species with regeneration can reduce this time down to days or even seconds. The gas is not poisonous or chemical unless the creature can also generate such effects.",
+
+Energy: "The creature can mold and shape intangible energies such as fire, ambient radiation, air or even light into a body but their natural state is sentient energy. The energies themselves can be harmful and while the creature can mold and shape these energies to coalesce into a form, this talent is not an offensive capability. The creature cannot increase or decrease the intensity of the energies either.",
+
+Liquid: "The creature is made of liquid; mud, slime, water or even acid. The liquid's properties remain the same and can be used creatively to attack or defend. If the body is dispersed with suitable force, the creature can reform in a day or up to a week. If the species has regeneration, the time can be reduced to days or even seconds. The creature cannot manipulate the liquid further than minor tricks and forming a body, nor can the creature increase or decrease the volume of the liquid that makes up their body.",
+
+// Tail
+Prehensile: "The species has a long tail, capable of being used to grab and swat targets like an additonal hand. If used offensively, the tail is lackluster. It is capable of grabbing and pushing but lacks the quick release power of a punch. The greatest advantage of this tail is that it is very manueverable and flexible, able to strike from around the creature or even overhead. This tail can assist somewhat with balace but it can also get in the way in times of stress or danger.",
+
+Club: "The creature has a tail that is rigid and thick, potentially ending with a large bulbous end. The whole tail is suitable for clubbing or bashing targets but mostly cannot be used for any other activity. If the creature has prehensile as well, then this tail is capable of attacks from a variety of angles with punishing power and can grapple with a respectable strength. The shortcoming of this tail is that it provides poor balance, potentially throwing off the creature if it attacks from a position of bad footing.",
+
+Balance: "The creature has a wide tail that is not very flexible but provides an amazing supplemental effort to balance. The species has great balance on all but the most trecherous of terrain and with focus they can overcome even the worst footing. The tail does not grab anything but it can be used to slam but it will be an unwieldy weapon.",
+
+Wings: "The creature has at least one pair of majestic wings that can lift the creature and keep it aloft. The flight speed is modest, equal to the creature's running speed, though additional wings will make the species a small bit faster.",
+
+Chymerid_Form: "The creature is a mix of humanoid torso and animal legs. The legs do not have to be the 'classic' Centaur, it can be any animal's legs.",
+
+Proxy_Sense: "The creature can extend the range of thier senses because one of their sensory organs has a supplemental, external assistant. A ring with eyes encircling it or an automated drone that picks up normally inaudible wavelengths are examples of what the species can utilize to augment their senses.",
+
+Long_Limbs: "The creature has limbs that are at least half as long as a normal humanoid's limbs. Arms that drag knuckles on the ground or legs that have two knees because they are so long. Even the neck can be used in this case such as a giraffe neck on a humanoid frame.",
+
+Fins: "The creature has fins that grow from their body to help them move swiftly and with greater agility when submerged. These fins allow the species to move at speeds comparable to an olympic runner when immersed in liquids. They need not be in water to gain this benefit though the fins grant them no protection if they are immersed in a fluid that they cannot normally withstand such as magma or acid.",
+
+
+}
 
 //Table 4: Extraordinary Abilities 20
 const extraordinaryAbilities = [
@@ -179,19 +297,104 @@ const superstitions = [
 ];
 
 //Table 11:
-const nameName5 = []
+const landscapeFeatures = ["The giant looming carved figure, shaped roughly like a beast of myth and legend, helps the local populace tell the passing of time and bleeds an ichor that serves as excellent albeit unstable fuel and fertilizer.",
+"The heart of On-Ten, a giant caldera to an active undersea, that is just above the sea level and the size of an island.",
+"Forest Trees are massive columns that have entire forests growing within their inner walls, beneath the bark.",
+"Tic Tac Torrents are twin jetstreams that rise up, arc and cross over twin descending waterfalls that falls from a mountain that stretches as far as the eye can see.",
+"Season sprouts; plants that create seperate and suitable environment for locals. From grasslands to trees, the larger the Season sprout the wider it's area of influence and the longer this generated enviorment will maintain.",
+"Eastern continental twin landmass in the sky, caught in the orbit of a suspended meteor.",
+"Man's Might Mountain range: Mountains formed not by tectonic plates and earthquakes but people.",
+"Sanguine Sea: A sea where a maritime battle  was staged, the marines were taken by such bloodlust that no one survived and the sea has been blood tinged since.",
+"Magma scabs: Craters where meteors hit with such impact that scars of open magma opened in the land but had a layer of oil and earth supercool quickly over it making magma pockets where torn earth can reveal active magma flow.",
+"Tomb City: A specialized necropolis where only the chosen are allowed to be buried.",
+"Lightning Gardens: Ionic disruption caused by minerals that are cultivated to craft particular discharges of electricity, such as a tree shaped St.Elmo's fire.",
+"The Hollow Hearld: A massive arc that was mostly taken apart to serve as the foundation for the first local colony. The unused parts of the shell remain as an impressive feat of ancient ingenuity.",
+"The Immortal's Ring: A colosseum where legendary battles once took place regularly, the ground itself can raise the bloodlust of even staunch pacifists. Sometimes the echoes of combat still resound from the 'ring' and new trophies will appear to line the wall.",
+"Terran crown: A worldwide, circular mountain range made up of shifting elemental aspected crystals and minerals.",
+"Daylight Woods: A forest where every tree, plant, fruit and beast emits a bioluminescent glow of varying intensity.",
+"Yesterday's Graveyard: An island chain made of the calcified remains of long dead creatures.",
+"Liquid Diamond Mines: Natural pools and lakes of liquid minerals, such as diamond or ruby, that lead down to cavern rivers and grottos. In larger pools, this liquid can evaporate and cause localized mineral rainstorms.",
+"Shattering Sky: Due to aberrant gaseous dispersal in the atmosphere, or a curse, during the sunset the sky looks to crack and fracture like a broken glass pane until the sun goes down.",
+"Enmity Growth: Plants that look like emasciated people until they absorb water and engorge. The plants then appear to emit vitality and look to the untrained eye like a person. They are brittle when dry but this material serves as excellent lumber when engorged and harvested. The engorged tree oozes a blood-like sap when being cut and the unprepared can walk away from the experience feeling like they have killed someone rather than harvested a plant.",
+"The Choir: Pockets in the landscape of a windy but barren location that creates complex musical sounds as the wind passes through holes, pockets and divets."
+]
 
 //Table 12:
-const nameName6 = []
+const technology = [
+  "Stone Age", "Bronze Age", "Imperial Roman Age", "Middle Ages", "Steam Age", "Industrial Age", "Atomic Age", "Colony Age (Solar System)", "Gateway Age (Intergalactic System)", "Energy Age (Hyperspace)"
+]
 
 //Table 13:
-const nameName7 = []
+const government = [
+  "Anarchy/None", 
+  "Hive Mind",
+  "Confederation",
+  "Plutocracy/Megacorporation",
+  "Democracy",
+  "Colony/Puppet State",
+  "Feudal",
+  "Criminal Empire",
+  "Technocracy",
+  "Tribe/Clan",
+  "Theocracy",
+  "Dictatorship",
+  "Republic",
+  "Matriarchy",
+  "Patriarchy",
+  "Oligarchy",
+  "Monarchy",
+  "Triumvirate",
+  "Socialist State",
+  "Regeancy"
+]
 
 //Table 14:
-const nameName8 = []
+const definingIndustries = [
+  "Academic",
+  "Agricultural",
+  "Exploration",
+  "High Craft",
+  "Common Craft",
+  "Transport",
+  "High Technology",
+  "Common Technology",
+  "High End Trade",
+  "Common Trade",
+  "Entertainment",
+  "Leisure",
+  "Medical",
+  "Military",
+  "Intelligence",
+  "Raiding",
+  "None",
+  "Banditry",
+  "Piracy",
+  "Research"
+]
 
 //Table 15:
-const nameName9 = []
+const virtuesVices = [
+  "Courage",
+  "Addictive",
+  "Spiritual",
+  "Cowardice",
+  "Materialistic",
+  "Temperate",
+  "Witty",
+  "Pacifistic",
+  "Tyrannical",
+  "Honest",
+  "Melancholy",
+  "Benevolent",
+  "Xenophilic",
+  "Deceptive",
+  "Decadent",
+  "Gentle",
+  "Confrontational",
+  "Xenophobic",
+  "Industrious",
+  "Cruel"
+]
 
 let phys = {
   Head: ["Extra", "Cosmetic", "Combat"]
@@ -212,6 +415,7 @@ const randN = (x) => {
 const generate = () => {
   first = randN(8)
   climate1 = climate[first]
+  mainZones = []
   populace1 = populace[randN(10)]
   physChar = physicalCharacteristics[randN(20)]
   extraOrdAbil = extraordinaryAbilities[randN(20)]
@@ -221,14 +425,25 @@ const generate = () => {
   culture  = culturalQuirks[randN(20)]
   leadership = leadershipQuirks[randN(20)]
   superstition = superstitions[randN(20)]
+  searcher = climate[8][first].trim().split(" ");
 
-  console.log("Your World is " + climate1 + ": " + climate[8][first])
-  console.log("Your people are " + populace1 + ": " + sizes[populace1])
-  console.log("They have a " + physChar)
-  console.log("Their extra ordinary Ability is " + extraOrdAbil + ". But they have the " + drawBacks + " Drawback.")
-  console.log("These beings live in a " + scope + ". With a culture that believes " + culture)
-  console.log()
+  theWorld.innerText = "Your World is " + climate1 + ": " + climate[8][first].replace(/_/g, ' ') + "\n"
+  //console.log("Your World is " + climate1 + ": " + climate[8][first] + "\n")
+
+  if (searcher[0] === "Choose") {
+    mainZones.push("Choose as you see fit!")
+  } else {
+      for (i = 0; i < searcher.length; i++) {
+    x = searcher[i]
+    mainZones.push(x + ": " + zones[x])
+  };
+  };
+    
+  thePopulace.innerText = "Your people are " + populace1 + ": " + sizes[populace1]
+  thePhysical.innerText = "They have a " + physChar
+  theExtra.innerText = "Their extra ordinary Ability is " + extraOrdAbil + ". But they have the " + drawBacks + " Drawback."
+  // console.log("These beings live in a " + scope + ". With a culture that believes " + culture)
+  // console.log()
 
 }
 
-generate()
