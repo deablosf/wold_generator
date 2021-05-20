@@ -1,11 +1,24 @@
 // Okay This will be a culture generator
 // Now lets turn the first five into a working thing!
 
+// world html ids
 const theWorld = document.getElementById('theWorld');
 const theZones = document.getElementById('zones');
+const theLandFeats = document.getElementById('landscapeFeats')
+const theLocalScope = document.getElementById('localScope')
+// the People html ids
 const thePopulace = document.getElementById('populace');
-const theExtra = document.getElementById('extra');
 const thePhysical = document.getElementById('physical');
+const theExtra = document.getElementById('extra');
+const theDrawBack =  document.getElementById('drawBacks')
+// Culture and belief ids
+const theTech = document.getElementById('technology')
+const theIndust = document.getElementById('definingIndustries')
+const theGovern = document.getElementById('government')
+const theLeaderQ = document.getElementById('leaderQuirks')
+const theMilQuirks = document.getElementById('milQuirks')
+const theCultQuiks = document.getElementById('culQuirks')
+const theSupersti = document.getElementById('supersti')
 
 let userChoice = {
 
@@ -197,7 +210,12 @@ const populaceDrawbacks = [
 
 //Table 6: Location Scope (Roll 1d6, match the result to the corresponding number)
 const locationScope =  [
-  "Hamlet (Two or Three Hamlets equal a Village)", "Village (Two or Three Villages equal a Town)", "Town (Two to Five Towns equal a City)", "City (Three to Five Cities equal a City-State)", "City-State (Two or Three City States equal a Region)", "Region (Three of more regions equal a Nation)"
+  "Hamlet (Two or Three Hamlets equal a Village)", 
+  "Village (Two or Three Villages equal a Town)", 
+  "Town (Two to Five Towns equal a City)", 
+  "City (Three to Five Cities equal a City-State)", 
+  "City-State (Two or Three City States equal a Region)", 
+  "Region (Three of more regions equal a Nation)"
 ];
 
 //Table 7: Military Quirks 20 in all
@@ -412,38 +430,52 @@ const randN = (x) => {
     // console.log(score);
 };
 
-const generate = () => {
+const whereUFrom = (x) => {
+  num = x // right now this does nothing but it will dictate how many featured locations there are. 
   first = randN(8)
   climate1 = climate[first]
   mainZones = []
-  populace1 = populace[randN(10)]
-  physChar = physicalCharacteristics[randN(20)]
-  extraOrdAbil = extraordinaryAbilities[randN(20)]
-  drawBacks = populaceDrawbacks[randN(20)]
+  landFeats = landscapeFeatures[randN(20)]
   scope = locationScope[randN(6)]
-  military = militaryQuirks[randN(20)]
-  culture  = culturalQuirks[randN(20)]
-  leadership = leadershipQuirks[randN(20)]
-  superstition = superstitions[randN(20)]
   searcher = climate[8][first].trim().split(" ");
 
-  theWorld.innerText = "Your World is " + climate1 + ": " + climate[8][first].replace(/_/g, ' ') + "\n"
-  //console.log("Your World is " + climate1 + ": " + climate[8][first] + "\n")
-
+  theWorld.innerText = "Your World is a " + climate1 + " world. ";
   if (searcher[0] === "Choose") {
     mainZones.push("Choose as you see fit!")
   } else {
-      for (i = 0; i < searcher.length; i++) {
-    x = searcher[i]
-    mainZones.push(x + ": " + zones[x])
+    for (i = 0; i < searcher.length; i++) {
+      x = searcher[i]
+      mainZones.push(x + ": " + zones[x])
+    };
   };
-  };
+  theZones.innerText = "The main Climate zones your " + climate1 + "wolrd are:"  + "\n" + climate[8][first].replace(/ /g, ', ') .replace(/_/g, ' ');
+  theLandFeats.innerText = "A feature landscape of this world is " + landFeats;
+  theLocalScope.innerText  =  scope;
+}
+
+const generate = () => {
+  whereUFrom()
+  
+  // populace1 = populace[randN(10)]
+  // physChar = physicalCharacteristics[randN(20)]
+  // extraOrdAbil = extraordinaryAbilities[randN(20)]
+  // drawBacks = populaceDrawbacks[randN(20)]
+  
+  // military = militaryQuirks[randN(20)]
+  // culture  = culturalQuirks[randN(20)]
+  // leadership = leadershipQuirks[randN(20)]
+  // superstition = superstitions[randN(20)]
+  
+
+  
+  
+
+  
     
-  thePopulace.innerText = "Your people are " + populace1 + ": " + sizes[populace1]
-  thePhysical.innerText = "They have a " + physChar
-  theExtra.innerText = "Their extra ordinary Ability is " + extraOrdAbil + ". But they have the " + drawBacks + " Drawback."
-  // console.log("These beings live in a " + scope + ". With a culture that believes " + culture)
-  // console.log()
+  // thePopulace.innerText = "Your people are " + populace1 + ": " + sizes[populace1]
+  // thePhysical.innerText = "They have a " + physChar
+  // theExtra.innerText = "Their extra ordinary Ability is " + extraOrdAbil + ". But they have the " + drawBacks + " Drawback."
+  
 
 }
 
