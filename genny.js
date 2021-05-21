@@ -337,12 +337,21 @@ const landscapeFeatures = ["The giant looming carved figure, shaped roughly like
 "The Choir: Pockets in the landscape of a windy but barren location that creates complex musical sounds as the wind passes through holes, pockets and divets."
 ]
 
-//Table 12:
+//Table 12: 10 tech levels
 const technology = [
-  "Stone Age", "Bronze Age", "Imperial Roman Age", "Middle Ages", "Steam Age", "Industrial Age", "Atomic Age", "Colony Age (Solar System)", "Gateway Age (Intergalactic System)", "Energy Age (Hyperspace)"
+  "Stone Age", 
+  "Bronze Age", 
+  "Imperial Roman Age", 
+  "Middle Ages", 
+  "Steam Age", 
+  "Industrial Age", 
+  "Atomic Age", 
+  "Colony Age (Solar System)", 
+  "Gateway Age (Intergalactic System)", 
+  "Energy Age (Hyperspace)"
 ]
 
-//Table 13:
+//Table 13: 20 kinds of govern
 const government = [
   "Anarchy/None", 
   "Hive Mind",
@@ -366,7 +375,7 @@ const government = [
   "Regeancy"
 ]
 
-//Table 14:
+//Table 14: 20 industries
 const definingIndustries = [
   "Academic",
   "Agricultural",
@@ -467,27 +476,31 @@ const whoBeHere = (a)=> {
   thePhysical.innerText = "A interesting physical feature they possess are " + physChar;
   theExtra.innerText = "These people also possess " + extraOrdAbil;
   theDrawBack.innerText = "Unfortunitly they suffer from " + drawBacks;
+};
+
+const whatTheyBelieve = () => {
+  techno = technology[randN(10)]
+  industrial = definingIndustries[randN(20)]
+  govern = government[randN(20)]
+  leadership = leadershipQuirks[randN(20)]
+  military = militaryQuirks[randN(20)]
+  culture  = culturalQuirks[randN(20)]
+  superstition = superstitions[randN(20)]
+
+  theTech.innerText  = "The peoples technological level is " + techno;
+  theIndust.innerText = "Their definitive Industry is " + industrial;
+  theGovern.innerText = "Their form of Government is " + govern;
+  theLeaderQ.innerText = "The leaders of your people follow " + leadership;
+  theMilQuirks.innerText = "Their military beliefs way heavy on " + military;
+  theCultQuiks.innerText = "Their have adopted " + culture;
+  theSupersti.innerText = "A odd belief has spread in this sociaty " + superstition;
+
 }
 
 const generate = () => {
   whereUFrom()
   whoBeHere(true)
-  
-  // military = militaryQuirks[randN(20)]
-  // culture  = culturalQuirks[randN(20)]
-  // leadership = leadershipQuirks[randN(20)]
-  // superstition = superstitions[randN(20)]
-  
-
-  
-  
-
-  
-    
-  // thePopulace.innerText = "Your people are " + populace1 + ": " + sizes[populace1]
-  // thePhysical.innerText = "They have a " + physChar
-  // theExtra.innerText = "Their extra ordinary Ability is " + extraOrdAbil + ". But they have the " + drawBacks + " Drawback."
-  
+  whatTheyBelieve()
 
 }
 
