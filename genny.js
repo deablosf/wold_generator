@@ -448,18 +448,30 @@ const whereUFrom = (x) => {
       mainZones.push(x + ": " + zones[x])
     };
   };
-  theZones.innerText = "The main Climate zones your " + climate1 + "wolrd are:"  + "\n" + climate[8][first].replace(/ /g, ', ') .replace(/_/g, ' ');
+  theZones.innerText = "The main Climate zones of your " + climate1 + " world are:"  + "\n" + climate[8][first].replace(/ /g, ', ') .replace(/_/g, ' ');
   theLandFeats.innerText = "A feature landscape of this world is " + landFeats;
   theLocalScope.innerText  =  scope;
+};
+
+const whoBeHere = (a)=> {
+  pop = a
+  if (a == true) {
+    populace1 = populace[randN(10)];
+    thePopulace.innerText = "The people are " + populace1;
+  }
+  
+  physChar = physicalCharacteristics[randN(20)];
+  extraOrdAbil = extraordinaryAbilities[randN(20)];
+  drawBacks = populaceDrawbacks[randN(20)];
+
+  thePhysical.innerText = "A interesting physical feature they possess are " + physChar;
+  theExtra.innerText = "These people also possess " + extraOrdAbil;
+  theDrawBack.innerText = "Unfortunitly they suffer from " + drawBacks;
 }
 
 const generate = () => {
   whereUFrom()
-  
-  // populace1 = populace[randN(10)]
-  // physChar = physicalCharacteristics[randN(20)]
-  // extraOrdAbil = extraordinaryAbilities[randN(20)]
-  // drawBacks = populaceDrawbacks[randN(20)]
+  whoBeHere(true)
   
   // military = militaryQuirks[randN(20)]
   // culture  = culturalQuirks[randN(20)]
