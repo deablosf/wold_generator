@@ -4,16 +4,19 @@
 // world html ids
 const theWorld = document.getElementById('theWorld');
 const theZones = document.getElementById('zones');
-const theZoneDetails = document.getElementById('zoneDetails')
-const theLandFeats = document.getElementById('landscapeFeats')
-const theLocalScope = document.getElementById('localScope')
-const thePlanet = document.getElementById('planet')
+const theZoneDetails = document.getElementById('zoneDetails');
+const theLandFeats = document.getElementById('landscapeFeats');
+const theLocalScope = document.getElementById('localScope');
+const thePlanet = document.getElementById('planet');
 // the People html ids
 const thePopulace = document.getElementById('populace');
 const thePhysical = document.getElementById('physical');
-const thePhysicalDetails = document.getElementById('physicalDetails')
+const thePhysicalButtons = document.getElementById('physicalButtons');
+const thePhysicalDetails = document.getElementById('physicalDetails');
 const theExtra = document.getElementById('extra');
-const theDrawBack =  document.getElementById('drawBacks')
+const theExtraButtons = document.getElementById('extraButtons');
+const theExtraDetails = document.getElementById('extraDetails')
+const theDrawBack =  document.getElementById('drawBacks');
 // Culture and belief ids
 const theTech = document.getElementById('technology')
 const theIndust = document.getElementById('definingIndustries')
@@ -451,64 +454,64 @@ const landscapeFeatures = ["The giant looming carved figure, shaped roughly like
 
 //Table 12: 10 tech levels
 const technology = [
-  "Stone Age", 
-  "Bronze Age", 
-  "Imperial Roman Age", 
-  "Middle Ages", 
-  "Steam Age", 
-  "Industrial Age", 
-  "Atomic Age", 
-  "Colony Age (Solar System)", 
-  "Gateway Age (Intergalactic System)", 
-  "Energy Age (Hyperspace)"
+  "Stone Age: A primitive, proto-society using beasts, muscle and fire to fuel them. There is no means of communicating past vocal range and tools are made of stone, bone and plants.", 
+  "Bronze Age: In this age, nations and metalworking rise. Clay pots for storing food also serves as a source of art and passing on stories, worked soft metals like copper and bronze are made into tools and equipment. The people can settle in areas and take professions other than hunter or gatherer.", 
+  "Imperial Roman Age: Sciences and intellectual pursuits have grown along with technology to allow for more sophisticated civilizations can cover an entire region and not just a single city, warfare has evolved with hard metals and strong defenses.", 
+  "Middle Ages: With the collapse of the centralized power, new smaller kingdoms have taken root and begin to grow. The sophisticated, advanced ideas and technology of the fallen empire that was once at the center of the civilized world fades, new answers to old questions are discovered and old answers are to be rediscovered. The smaller kingdoms carve up their land holdings among lesser noblemen. Heavy armored soldiers with horse, sword and lance face off against heavily fortified locations and powerful bows and occasionally simple guns.", 
+  "Steam Age: An age of rebirth and enlightenment seeing the birth of new schools of thought, new approaches to problems and daring experiments become the keys to unlocking new answers. It is not divine mysteries that hold truth but science and for the living to know the world they must explore it. Ships take to longer voyages, guilds rise into corporations, gunpowder weapons overtake bows and make armored forces obsolete.", 
+  "Industrial Age: Science's reach has expanded to grasp hold of the energy found in nature. Steam and electricity break down barriers. Travel by railroad and communication by telegraph, then radio and telephone become possible. Steam powered ships make intercontinental travel more accessible for more common people allowing them to travel and settle in new lands. Metropoli return as urban living becomes more standardized, trade is good and bring with it jobs. Planes and seafaring ships as well as submarines allow for exploration and domination of land, sea and sky. Awful chemical weapons, sure fire rifles and pistols plus machine guns enter into the fray and change the face of war.", 
+  "Atomic Age: Nuclear energy feeds the energy needs of cities and the infrastructures of regions, factories and manufacturing create jobs that financially empower the working class. Corporations grow in power and become sub-governments in their own right while jet-engine powered planes and the internet break down distance and borders between people. Space exploration becomes possible but in short distances to local satellites. War enters automation as well, drones and computer targeting programs make killing from a long distance easier and easier. The nuclear age brings the nuclear bomb and other weapons of mass destruction.", 
+  "Colony Age (Solar System): Technological advancements in medicine, agriculture and other fields give longer lifespans and support denser and denser populace in the cities. In an effort to alleviate strain on the nations and the people, extraterrestrial colonies are built allowing the first generation to live off world. Virtual reality programs and systems are used to test theories for off-world sites and technologies, and other planets and satellites are being terraformed or have already begun colonization within the solar system. Mega-Corporations have risen to become recognized national entities and nations that have been long time allies combine to become World nations. Advanced robotics take to work sites and the battlefield making those fields proxies of large powerful entities.", 
+  "Gateway Age (Intergalactic System): The species can now use a controlled means of traveling through portals or gates from one part of the known universe to another almost instantly. Entire planets are colonized and the reach of the species is now beyond their own solar system and into greater and further stars of their galaxy. Certain greater powers have control over the space faring colonial stations and planets of solar systems. Stars are tapped for energy, asteroids are mined for resources and off-shoots of the species may have never seen the seed world their ancestors sprung from. Major conflicts between powers are handled by star-fleets and space naval conflicts, most workers and combatants are still automated proxies but the occasional biological soldier that fights is routinely augmented to the task by either mechanical or biological means. Combustion weapons are relics, replaced by bulky elemental casters and laser-based technology. Armors are strange patterns of elemental refractory pieces to diffuse the brunt of incoming attacks and are available for civilian use. Gravity and other celestial energies have been harnessed to allow even local transports to move at incredible speeds and with equal precision. ", 
+  "Energy Age (Hyperspace): Intergalactic travel is controlled and the reach of the greatest powers bleed through multiple solar systems and entire galaxies can fall under the protective dominion of a single flag. The gateways that connect star systems in the past have been refined, working on smaller scale and allowing for domestic travel gates on planets and in colonies. Teleportation phenomena have revolutionized transport between the furthest reaches of dominions. Conflicts between powers are negotiated when possible but planet devastating weapons make this the prefered method akin to the terrible force of the nuclear weapons of a bygone age. The members of the civilized areas are idealized either by genetic manipulation or technological means and peacekeepers or soldiers that are not proxy-soldiers are armed with personalized power that can be hailed as 'magical' in the ease that they can manipulate, generate or eliminate elemental, spatial, entropic, technological and biological phenomena. The only direction left for this civilization is down."
 ]
 
 //Table 13: 20 kinds of govern
 const government = [
-  "Anarchy/None", 
-  "Hive Mind",
-  "Confederation",
-  "Plutocracy/Megacorporation",
-  "Democracy",
-  "Colony/Puppet State",
-  "Feudal",
-  "Criminal Empire",
-  "Technocracy",
-  "Tribe/Clan",
-  "Theocracy",
-  "Dictatorship",
-  "Republic",
-  "Matriarchy",
-  "Patriarchy",
-  "Oligarchy",
-  "Monarchy",
-  "Triumvirate",
-  "Socialist State",
-  "Regeancy"
+  "Anarchy/None: There is no recognized authority.", 
+  "Hive Mind: A unified consciousness in which each 'individual' shares thoughts and form a collective intelligence. One is all. All are one.",
+  "Confederation: Individual organizations allied together under a treaty that give some of their power to a weaker central government that provides for all involved. The organizations maintain control of themselves however.",
+  "Plutocracy/Megacorporation: Authority rests with the wealthiest members of society.",
+  "Democracy: Authority is invested to elected officials by the populace.",
+  "Colony/Puppet State: Authority flows from the parent nation that owns the colony to a local governor who runs the colony as they see fit.",
+  "Feudal: Authority flows from a monarch down to nobility who gains land rights in exchange for military service to the throne.",
+  "Criminal Empire: Authority is held by the head of a crime family with lieutenants serving governors in parts of the bosses territories.",
+  "Technocracy: Authority is held by technological experts and backed by the advanced creations they can bring to bear.",
+  "Tribe/Clan: Authority is held by a recognized patriarch or matriarch of a large system of family and extended family.",
+  "Theocracy: Authority is held by the clergy who serve as the 'living instruments of their Divine patron's will'.",
+  "Dictatorship: Absolute authority is held by a single individual or clique of people through which all power and decisions flow.",
+  "Republic: The authority is held by representatives of the people",
+  "Matriarchy: Women hold authority and wield the majority if not all political power.",
+  "Patriarchy: Men hold authority and wield the majority if not all political power.",
+  "Oligarchy: A small group of powerful exploiters hold all privilege and power.",
+  "Monarchy: Power is invested by right to a single leader of a family line who may or may not choose to share power and privilege.",
+  "Triumvirate: A political group in which three leaders share power and authority of the nation.",
+  "Socialist State: Authority is held by the central government, as does ownership of all means of production for goods. Some occasional private forms of distribution or production are allowed with proper oversight but the government ultimately owns all things and provides for the people all services and goods they require.",
+  "Regency: A selected stand in for a monarch while they cannot fulfill their obligations because of age or infirmary with power limited by law and often an oversight council."
 ]
 
 //Table 14: 20 industries
 const definingIndustries = [
-  "Academic",
-  "Agricultural",
-  "Exploration",
-  "High Craft",
-  "Common Craft",
-  "Transport",
-  "High Technology",
-  "Common Technology",
-  "High End Trade",
-  "Common Trade",
-  "Entertainment",
-  "Leisure",
-  "Medical",
-  "Military",
-  "Intelligence",
-  "Raiding",
-  "None",
-  "Banditry",
-  "Piracy",
-  "Research"
+  "Academic: Sources of knowledge are sold, scrolls and manuals. Teachers and tutors can sell of their skills as well, though sharing too many secrets can cut away at the intellectual advantage that these people hold.",
+  "Agricultural: Whether using advanced farming techniques or blessed with amazing fertility in their harvest yield, the society grows an abundance of food that is sold to others. The society may comfortably feed itself as well as a society one size larger, 1d4 societies smaller or 1d8 societies that are two sizes smaller than itself.",
+  "Exploration: These people are skilled at finding safe paths through the unknown and hire out their services as scouts and navigators.",
+  "High End Craft: Goods and art that are unique, intricate and labor intensive. These works are almost universally masterpieces and fetch such a high price individually that enough money is pulled in from their sale and taxation that the society can thrive. They are patronized by one society larger or 1d4 x2 societies smaller than itself.",
+  "Common Craft: Goods and art that are universally in demand but time consuming to make are mass produced. This society can provide goods that are simple or basic like rope, basic clothing or simple furniture for themselves and a society one size larger than them, 1d3 societies smaller or 1d6 areas two sizes smaller than itself.",
+  "Transport: These daring folk will move good or people from one place to another safely and efficiently. Perhaps they are the only means of travel between landmasses or the only people willing to ferry certain goods (i.e smugglers).",
+  "Advanced Technology: This society boasts a technological superiority to their contemporaries. They keep to themselves the secrets of how to make equipment, weapons or tools that are one technology level higher than those around them and they can sell 'old models' that are still high-end and hard for other societies to reverse engineer. ",
+  "Common Technology: This society is a manufacturing hub for the technologies that people are using currently. They are not limited to one field, boasting deals with several guilds and their artisans to provide tools that people use daily.",
+  "High End Trade: The merchants of this society cater to high end clients, such as nobility or the extremely wealthy. While they sell niche and unique goods, their clients pay so much for each deal that with sales, taxation and donations the society is able to thrive.",
+  "Common Trade: This is a society of merchants and guilds, a market hub. They spread out to every place they can reach selling simple, basic goods and wares to as wide a consumer base as they can.",
+  "Entertainment: Performers of song, stage; masters of athletic and martial prowess; the people of this society travel to certain places in troupes or teams to different locations to provide rousing shows to the joy of loyal fans.",
+  "Leisure: An oasis or hub for weary or wounded travelers to recuperate and relax. The people of this society base their professions around targeting visitors with local goods and customs to buy and carry back to their homes in hopes of luring more visitors or returning customers.",
+  "Medical: The medical sciences of these people get results. They can provide medical treatment one technology level higher than others and when healing can add a small bonus to how much is recovered.",
+  "Military: The armed forces of this society serves as the standard that other mercenaries and fighting forces are judged. The mercenary companies that come from here do not fight one another in lethal combat but if fielded against each other may use non-lethal means such as negotiation or subdual weapons. They also make enough money that through sale, taxation and donations the society thrives.",
+  "Intelligence: The field of espionage is where this society makes their money. Special agents are hired out to serve as intelligence officers, spy masters and cultural attaches for other places. This society protects its own secrets and has their own means of hiding the truth of their espionage guilds from others. A secret code is shared among their community to ensure that conflicting intelligence agents do not interfere with one another as a professional and civil courtesy or possibly because of the law.",
+  "Raiding: It is not their own businesses that fund this society but their ability to raid others and take what they need. The raiders may be infamous and feared but they are successful during their raid seasons and continue to keep the society provided for.",
+  "NoneNone: These people may be okay at a number of fields but not great at anything. They may be a self-sufficient society that does not engage in wider trade.",
+  "Banditry: The people of this society make their money by attacking travelers, merchants and the unsuspecting on the roads and lands outside of their borders. It is not a crime in their eyes to take from others, it is a crime to inflict this behavior and tactic on neighbors within the community.",
+  "Piracy: Like bandits on the sea, the people of this society prowl the waterways and open sea to plunder travelers, merchants and unsuspecting vessels for their goods and wares then sell them to others and fuel their homeland's economy by sending their profits back home.",
+  "Research: This society is full of educated people who continue to push boundaries through research into any number of areas not limited to science, arcanedemia, theology and ritual fields. Their research uncovers new methodologies and makes current practices more efficient. Their research can improve a single field for another society by increasing their results or increasing the effects of magics."
 ]
 
 //Table 15:
@@ -545,7 +548,8 @@ let phys = {
 
 let setState = {
   zoneDetail: "",
-  physicalDetail: ""
+  physicalDetail: "",
+  extraDetial: ""
 };
 
 const randN = (x) => {
@@ -569,8 +573,17 @@ const physicalMagic = (z) => {
   if (z == setState.physicalDetail) {
     thePhysicalDetails.innerText = "";
   } else {
-    setState.zoneDetail = z
+    setState.physicalDetail = z
     thePhysicalDetails.innerText = physChara[z]
+  }
+};
+
+const extraMagic = (z) => {
+  if (z == setState.extraDetial) {
+    theExtraDetails.innerText = "";
+  } else {
+    setState.extraDetial = z
+    theExtraDetails.innerText = extraordinaryTable[z]
   }
 };
 
@@ -614,12 +627,14 @@ const whoBeHere = (a)=> {
   drawBacks = populaceDrawbacks[randN(20)];
 
   thePhysical.innerText = "A interesting physical feature they possess are " + physChar;
-  thePhysicalDetails.innerHTML = physSearch.map(fysical =>
+  thePhysicalButtons.innerHTML = physSearch.map(fysical =>
     '<button class="brick" onclick="physicalMagic(' + `'${fysical}'` + ')">' + fysical.replace(/_/g, " ") + '</button>'
     ).join('');
   theExtra.innerText = "These people also possess " + extraOrdAbil;
   if (physicalNum < 14) {
-    
+    theExtraButtons.innerHTML = extraSearch.map(extra => 
+      '<button class="brick" onclick="extraMagic(' + `'${extra}'` + ')">' + extra.replace(/_/g, " ") + '</button>'
+    ).join('');
   }
   theDrawBack.innerText = "Unfortunitly they suffer from " + drawBacks;
 };
