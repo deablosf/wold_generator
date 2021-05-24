@@ -11,6 +11,7 @@ const thePlanet = document.getElementById('planet')
 // the People html ids
 const thePopulace = document.getElementById('populace');
 const thePhysical = document.getElementById('physical');
+const thePhysicalDetails = document.getElementById('physicalDetails')
 const theExtra = document.getElementById('extra');
 const theDrawBack =  document.getElementById('drawBacks')
 // Culture and belief ids
@@ -82,28 +83,28 @@ const sizes = {
 
 //Table 3: Physical Characteristics 20
 const physicalCharacteristics = [
-    "Head Variants", "Arm Variants", "Leg Variants", "Eye Variants", "Ear Variants", "Tongue Variants", "Mouth Variants", "Skin Color Variants", "Skin Texture Variants", "Hand Variants", "Animal Forms", "Extra Organs", "Extreme Appearance", "Non-Solid Form", "Tail", "Wings", "Chynerid", "Proxy Sense", "Long Limbs", "Fins",
+    "Head Variants", "Arm Variants", "Leg Variants", "Eye Variants", "Ear Variants", "Tongue Variants", "Mouth Variants", "Skin Color Variants", "Skin Texture Variants", "Hand Variants", "Extra Organs", "Extreme Appearance", "Non-Solid Form", "Tail", "Wings", "Animal Forms", "Chynerid", "Proxy Sense", "Long Limbs", "Fins",
     {
       0: "Extra_Heads Cosmetic_Adornments Combat_Adornments",
       1: "Extra_Arms Tentacles Diarthrotic_Joints",
       2: "Extra_Legs Predatory_Legs Ungulate_Legs",
       3: "Insectoid Predatory_Cat Extra_Eyes",
-      4: "",
-      5: "",
-      6: "",
-      7: "",
-      8: "",
-      9: "",
-      10: "",
-      11: "",
-      12: "",
-      13: "",
-      14: "",
-      15: "",
-      16: "",
-      17: "",
-      18: "",
-      19: ""
+      4: "Large Pointed Antennae",
+      5: "Forked Frog Stinger",
+      6: "Multiple_Mouths Rows_of_Teeth Disposable_Teeth",
+      7: "Dotted_Patterns Primary_Color Translucent",
+      8: "Bark Scale Smooth",
+      9: "Extra_Digits Webbed_Digits Digging_Claws",
+      10: "Brain Heart Stomach",
+      11: "Ugly Beautiful Feranthrope",
+      12: "Gaseous Energy Liquid",
+      13: "Prehensile Club Balance",
+      14: "Wings",
+      15: "Animal_Forms",
+      16: "Chymerid_Form",
+      17: "Proxy_Sense",
+      18: "Long_Limbs",
+      19: "Fins"
     }
 ];
 
@@ -222,10 +223,97 @@ Fins: "The creature has fins that grow from their body to help them move swiftly
 
 }
 
-//Table 4: Extraordinary Abilities 20
+//Table 4: Extraordinary Abilities 20 0 - 13 multiple choices
 const extraordinaryAbilities = [
-    "Carrier", "Enhanced Senses", "Environmental Adaptation", "Expert Athelte", "Alternative Mobility", "Sight Variants", "Claw Variants", "Gaze Variants", "Bite Variants", "Natural Defense", "Superior", "Legendary Atavism", "Surge", "Adept", "Quills/Barbs", "Increased Speed", "Extended Lifespan", "Regeneration", "Naturebound", "Elastic Form"
+    "Carrier: The creature is a host for a subspecies of much smaller proportions that live within them. The subspecies can be communicated but only with simple commands such as attack, guard, stay. When the host is injured, if it is a debilitating, crippling or grievous wound, the subspecies home takes damage and may evacuate or rebel against the host.", 
+    "Enhanced Senses: The creature has honed senses that are capable of superhuman feats.", 
+    "Environmental Adaptation: The species has the ability to survive in harsh or even antagonistic environments that would not support human life.", 
+    "Expert Athlete: All members of the species are physically talented in one particular form of athletic practice or another.", 
+    "Alternative Mobility: This ability is intended to be in addition to standard mobility options such as crawling or walking however this need not be the case. Perhaps this alternative option is the only means that a creature or species can move, such as a sentient rock or a living color.", 
+    "Sight Variants: The species has not only the ability to see like a human but also has additional sight capabilities.", 
+    "Claw Variants: The species may have nails like a human finger or may have different capabilities such as those below.", 
+    "Gaze Variants: The creature can not only see but possess an offensive ability through their eyes as well with a variety of effects.", 
+    "Bite Variants: The creature has not only the ability to bite but their bite is far more formidable because of one (or more) of the effects listed below.", 
+    "Natural Defense: The species possesses an additional form of protection other than just greater endurance or pain tolerance and can lessen incoming damage from external sources.", 
+    "Superior: In some fields, the species is greater than even the greatest human potential. Their capacities are superhuman and can only go higher from there.", 
+    "Legendary Atavism: The species is descended from a creature of human myth and legend. Their ancestors genes, while recessive, are not buried and occasionally surface in members of the species even now.", 
+    "Surge: The species has the ability to expend energy in a burst that will temporarily increase their abilities in a certain field. These surges last for minutes, never more than one hour.", 
+    "Adept: The species have a natural inclination towards the comprehension and manipulation of paranormal energies and disciplines. The supraplane mentioned below is any alternative realm of realty where the arcane is prevalent such as a godly realm, the underworld or the spiritual plane.", 
+    "Quills/Barbs: The species has quills similar to a porcupine that may or may not retract. These quills are safely detachable and will regrow in a few days though if the species is capable of quickly healing, this could reduce the regrowth time substantially.", 
+    "Increased Speed: The species moves naturally with speeds comparable to a motorized vehicle, going tens of miles per hour. Some may even reach hundreds of miles per hour or faster.", 
+    "Extended Lifespan: The species is gifted with a long life, possibly hundreds of years or even thousands of years before reaching the end of their natural lifespans. With good living, excercise and anti-anging medicines this might even extend this further.", 
+    "Regeneration: The species is capable of healing faster and more completely than a human. They can reattach lost limbs or regrow them with nearly the same faculties as the lost one.", 
+    "Naturebound: The species has the ability to communicate with and command the obedience of plants, animals and insects.", 
+    "Elastic Form: The species has an extremely flexible and pliant physical form capable of stretching and other elastic deformation.",
+    {
+      0: "Plague Insects Harriers",
+      1: "Hearing Taste Sight",
+      2: "Underwater Subterranean Aerial",
+      3: "Climbing Acrobatics Swimming",
+      4: "Levitation Flight Swimming",
+      5: "X_Ray Energy_Sight Dark_Sight",
+      6: "Sharp_Nails Pincers Retractable",
+      7: "Paralysis Petrification Energy Blast",
+      8: "Fangs Poison Sleep",
+      9: "Thick_Hide Carapace Exo_Skeleton",
+      10: "Physical_Strength Social_Guile Intellect",
+      11: "Dragon Fairy Giant",
+      12: "Physical Healing Mental",
+      13: "Arcane Psychic Ritual"
+    }
 ];
+
+// Table for Table 4 Extraordinary stuff
+const extraordinaryTable = {
+  Plague: "Plague: The subspecies is viral in nature, a virulent disease that cooks and evolves and grows using the host body as a place to train and grow stronger. Creatures that have greater endurance or superior bodies may need to help the virus or their own anti-bodies will nearly annihilate the plague, preventing it from spreading far. This subspecies can exist for only a few yards, no more than ten, outside of a host or infected body but once it has infected someone else it does not need to return to the host.",
+  Insects:"Insects: This subspecies is made up of drones that painlessly carve out parts of the host to create a hive. Within the hive the insects, often bees or hornets but not limited to them, make room for a queen and await the command of the host. These subspecies are unique and develop properties based on the host, gaining one of the hosts other extraordinary abilities or physical characteristics. They can exist up to one hundred yards from the host and nest alone but depending on the size of the nest, they can travel in groups out to further distances with larger groups traveling out to miles away from the nest. The queen of the hive is NOT a drone but will obey the host unless the host puts the hive itself into danger, then the queen can override the hosts hold on the hive and take up to half of them away.",
+  Harriers: "Harriers: The subspecies is a super miniature but sentient species that has reached a level of technology that allows for ships to fly and fight outside of the host's body. The ships armaments are devastating...for their size, allowing them to at the least pester or at most do grievous harm to the host's targets. The larger the fleet and more advanced they are, the more of the host's body they require and if they are equal to or greater than the technological level of the host they take more than half of the body. The harriers have a maximum range of roughly fifty yards and need time to repair after conflicts.",
+  Hearing: "Hearing: The species can hear long distances, pinpoint individual sound sources in the midst of a small crowd. If they focus the species can hear a heart pumping blood and the blood flowing in someone's veins from ten yards away; these are samples of what feats they can accomplish.",
+  Taste: "Taste: A few examples of the species' superior taste are as follows: detecting ingredients by how fresh, in season they are, their land of origin or tasting a poison before from whisps before it is ingested. The species can even 'taste' things like color, light or time.",
+  Sight: "Sight: The species possesses the ability to see more than a human can perceive. Whether being able to see in the full spectrum of light waves, see colors that the human eye cannot pick up, see at a microscopic level or extend their vision outside themselves and see in a third person view; this species boasts a superior visual acumen.",
+  Underwater: "Underwater: The creature can breathe in fluid and move while fully immersed in fluid with ease. The pressure of being in the depths does not cause the same level of pain or discomfort as it would to a human, being in deeper depths make the fluid harder to filter breathable air making them lightheaded similar to the effects of being in high altitude for long dwellers. Being on land and out of the water may be second nature, may be like drowning for them or they may be able to stay on land for a short amount of time before the seperation from the water starts to enervate them.",
+  Subterranean: "Subterranean: Members of this species are adapted to living beneath the surface. Their see best in the dark and need very little respiration or fresh air. Tight, confined spaces are comfortable for them and they can dig through dirt and mud with the same ease that a fish can move through water. Stone offers a bit more resistance but even rock will give way, allowing them to move through stone as a human swimmer moves through water. Their skin is harder than a human because they are so dense and to protect them as they tunnel, however they are often sensitive to sunlight. If they are, moon and starlight are at a comfortable level of illumination for them.",
+  Aerial: "Aerial: The species has adapted to life in or above the clouds, higher than most mountains. They have a low density frame that allows them to remain buoyant in the clouds or capable of graceful flight. They can breathe in high altitudes, have sharp vision from adapting to see distant targets and can tolerate cold winds very well. Bring on land is difficult for most of them however and those who have this difficulty will fatigue faster when traveling on solid ground. Being in enclosed spaces will bother many of them as well, used to open space as they are. While being in bright, glaring lights do not blind them; being in even twilight will be too dark for some of them unless they are akin to hunting raptors who also have adapted to low light conditions.",
+  Climbing: "Climbing: The species can move along vertical and horizontal surfaces with ease. If there are natural handholds, they can travel as quickly as they walk. They can go up and down, forward and back with equal ease. Even if the surface they are climbing is smooth with no handholds or depression to find leverage, the species can still manage to travel at a relatively quickly crawl if they want. Going up ropes or vines is even easier, allowing this species to travel at the same speed as they can run.",
+  Acrobatics: "Acrobatics: The species is almost unparalleled in flexibility, grace and fluidity of motion. They can twist in upon themselves tightly, stretch their limbs, flip, roll and navigate over and around obstacles. Even the slowest of them could be freerunning and gymnastics experts with minimal effort.",
+  Swimming: "Swimming: All members of this species can move through fluids with little difficulty, displaying gymnastic flair and respectable speeds equal to their running capabilities on solid land. They can swiftly make turns and adjust to avoid obstacles even fully submerged though they cannot breathe underwater and water pressure can be a terrible and lethal burden for them.",
+  Levitation: "Levitation: The species can take off from the ground on the 'X-axis' only. They can up or back down but they cannot travel on the 'y-axis' to go forward or back while doing so, at least not of their own power. They can levitate and be carried or ride something else's momentum. While levitating, the creature weighs only one-tenth of their normal weight.",
+  Flight: "Flight: Unlike levitation, which is only up or down, this ability is full range of motion. The species can take off, move forward, back and side to side. They may not be the most graceful beings in air, this ability is almost like swimming but through the sky. With practice and effort, a member can learn to move with grace and speed. Some creatures will have wings to supplement this while others species simply find that gravity stands as a poor shackle to their physical forms either way, the species with this ability can fly as quickly as most cars, reaching speeds of one hundred and twenty miles an hour. Low density creatures can increase this speed to over five hundred miles per hour while beings with wings can increase their speeds by an additional fifty percent.",
+  Swimming_Alt: "Swimming: While the species may not be the most agile or the most graceful, they can swim in any fluid with equal ease, at incredible speeds and have an resistance to fluid pressure. This ability does not protect the species from any adverse effects of the liquid itself, so acid, lava, radioactive waste etc. would still possibly kill or hurt the species without some form of protection. Regardless of how viscous the fluid is though, the species moves through it with little to no resistance and can move through the deep levels of an",
+  X_Ray: "X-Ray: The species can see through solid matter though denser materials are resistant to this, making it hard until an item is too dense to see through. Hiding in the standard manner is powerless against such vision is extremely difficult.",
+  Energy_Sight: "Energy Sight: The species can see the radiation of elemental energies. From heat or radiation to light and gravity, the species can see the ebb and flow of these energies as easily as a human can see fire.",
+  Dark_Sight: "Dark Sight: The species can see perfectly clear even in the deepest natural darkness. Supranatural darkness is less effective, shortening the species field of view as though they were out in a full moon with no additional lights.",
+  Sharp_Nails: "Sharp nails: The species grow natural, reinforced stiletto nails that can be used in combat to slash and gouge.",
+  Pincers: "Pincers: The creature does not have nails or claws but instead has crustacean-like pincers that replace their hands or grow over their hands and wrists.",
+  Retractable: "Retractable: The species can hide and reveal their claws like a cat or other predator. These claws may come from the nailbed of the finger or from anywhere beneath the elbow.",
+  Paralysis: "Paralysis: Beings that lock eyes with a member of this species can be paralyzed entirely or in part. This may be lethal if a target's heart or lungs are paralyzed but often it is only capable of removing physical movement from the target while the creature stares into their eyes.",
+  Petrification: "Petrification: The species can look upon organic matter and turn it to stone, though how quickly this transformation takes place varies.",
+  Energy_Blast: "Energy Blast: The species can gather and unleash a single form of either terrestrial or celestial elemental energy through their eyes, directing the blast through their vision. The smallest burst of this gaze can be equivalent to a punch but greater applications are possible rivaling the destructive power of a bomb. Eyesight does drop considerably while this is in use however, details are almost impossible to make out without some form of superior eyesight.",
+  Fangs: "Fangs: The creature has sharp, predator's teeth and a jaw that can apply heavy force when biting making their mouths formidable weapons.",
+  Poison: "Poison: The creature has a means of corrupting the natural systems of a target, if they can bite and break the skin. This poison can be treated with medicine and",
+  Sleep: "Sleep: The species has a means, be in special saliva or toxins in their teeth, that will make a target sleepy if they can bite and break the skin.",
+  Thick_Hide: "Thick Hide: The species has tough, thick skin that is hard to penetrate without firearms or respectable strength.",
+  Carapace: "Carapace: The species has bone plates that protect the creature, unlike a hide it is hard to maneuver with but offers superior protection to a Hide.",
+  Exo_Skeleton: "Exo-Skeleton: The species has a durable outer shell that helps the species maintain shape and protect their insides. The creature can move at a reasonable speed and with ample agility.",
+  Physical_Strength: "Physical Strength: The species is at the pinnacle of human development even before puberty, full grown adults are about ten times stronger than a human and those who exercise can be over one hundred times mightier than a human.",
+  Social_Guile: "Social Guile: The species has an unprecedented talent for understanding non-verbal social cues and behaviors to nudge (but not control) the actions of others they speak, they can also avert suspicion from all but those who have superior intellect or social skills themselves. They can be leaders, tricksters, counselors etc.",
+  Intellect: "Intellect: This species are universally geniuses. They obtain and process information quickly and efficiently on a level that puts supercomputers to shame. They can be science masters, tactical prodigies etc.",
+  Dragon: "Dragon: The species is related to the mythical dragon, they can grow in size, gain the ability to breath elemental blasts, develop scales, wings, rending claws and a tail. They may develop one, a few or all of these traits.",
+  Fairy: "Fairy: The species is descended from the fae, they can weave and resist illusions or deceptions, touch or build with dreams and emotions as they were a substance, grow tall with pointed ears or shrink down and flit about on wings made of gossamer and fantasia. Members of the species may develop one, a few or all of these traits.",
+  Giant: "Giant: The species is descended from Giants. They possess great height and amazing physical attributes; phenomenal strength, endurance and durability. They can exist in any terrestrial environment and can grasp elements and build with them as though they were steel or any other tangible substance. Members of the species may develop one, a few or all of these traits.",
+  Physical: "Physical: For a short time, this species can surpass physical limitations and summon a great amount of strength and might. They become faster, stronger and become more durable while in this state. They do not improve their mental capacity, so they may still be surprised by traps or ambush, they may be physically capable of doing a task but not know how to do it or cannot think quickly enough to react.",
+  Healing: "Healing: The species has the ability to summon forth a burst of healing energy from within. This healing is fast and strong but not overly powerful. It will not take someone from death's door to unscathed but it will pull someone grievously injured back to a stable condition. If multiple members of the species use this ability, it can bleed out from them to encourage the healing of those around them even alien species. The more healing surges, the greater the healing effect for all involved perhaps it can even undo the adverse effects of aging without giving a longer lifespan.",
+  Mental: "Mental: The species can overcharge their minds and conceive, perceive and achieve 'impossible' things. Their physical forms become their only limiter, they can see tiny details but only as far as their eyes can see, they can conceive intricate plans and plots but their bodies may not be up to the task, they can dream up and start a project but may not be able to complete building the object in the time they can still understand the complex formulas required to complete it. This is a controllable 'Eureka!' moment, a flurry of insight that burns bright and fast.",
+  Arcane: "Arcane: The species has the ability to channel and cast magical energy, craft or weave spells and artifacts, see into a supraplane, interact with spirits or raise the dead into undead.",
+  Psychic: "Psychic: The species has the mental capacity to influence the world around them. Reading the thoughts of others, conjuring dreams and giving them form, sparking the reactions in molecules and matter to freeze, burn, lift, toss or pilot them. They can even separate their mental capacity from their physical forms and exist as pure thought.",
+  Ritual: "Ritual: The species draws power from rituals and observances to greater powers than themselves. Whether it be good, evil, divine, infernal, nature, personal, light, darkness etc.; the species follows customary practices, prays and offers respect and due diligence to the greater power and they are rewarded for it. They can perform miracles and magics, including transmutation of objects, raising the dead to their living state, create new life from seemingly nothing or possibly interact with space and time. Greater effects can be accomplished as more of the species works together in a greater ritual.",
+  Quills: "Quills: The species has quills similar to a porcupine that may or may not retract. These quills are safely detachable and will regrow in a few days though if the species is capable of quickly healing, this could reduce the regrowth time substantially.",
+  Increased_Speed: "Increased Speed: The species moves naturally with speeds comparable to a motorized vehicle, going tens of miles per hour. Some may even reach hundreds of miles per hour or faster.",
+  Extended_Lifespan: "Extended Lifespan: The species is gifted with a long life, possibly hundreds of years or even thousands of years before reaching the end of their natural lifespans. With good living, excercise and anti-anging medicines this might even extend this further.",
+  Regeneration: "Regeneration: The species is capable of healing faster and more completely than a human. They can reattach lost limbs or regrow them with nearly the same faculties as the lost one.",
+  Naturebound: "Naturebound: The species has the ability to communicate with and command the obedience of plants, animals and insects.",
+  Elastic_Form: "Elastic Form: The species has an extremely flexible and pliant physical form capable of stretching and other elastic deformation."
+}
 
 //Table 5: Populace Drawbacks 20
 const populaceDrawbacks = [
@@ -456,8 +544,9 @@ let phys = {
 //console.log (populace[5])
 
 let setState = {
-  zoneDetail: ""
-}
+  zoneDetail: "",
+  physicalDetail: ""
+};
 
 const randN = (x) => {
     let min = 0,
@@ -473,6 +562,15 @@ const zoneMagic = (z) => {
   } else {
     setState.zoneDetail = z
     theZoneDetails.innerText = zones[z]
+  }
+};
+
+const physicalMagic = (z) => {
+  if (z == setState.physicalDetail) {
+    thePhysicalDetails.innerText = "";
+  } else {
+    setState.zoneDetail = z
+    thePhysicalDetails.innerText = physChara[z]
   }
 };
 
@@ -507,12 +605,22 @@ const whoBeHere = (a)=> {
     thePopulace.innerText = "The people are " + populace1 + " in size \n" + "(" + sizes[populace1] + ")";
   }
   
-  physChar = physicalCharacteristics[randN(20)];
-  extraOrdAbil = extraordinaryAbilities[randN(20)];
+  physicalNum = randN(20)
+  extraordinaryNum = randN(20)
+  physChar = physicalCharacteristics[physicalNum];
+  physSearch = physicalCharacteristics[20][physicalNum].trim().split(" ");
+  extraOrdAbil = extraordinaryAbilities[extraordinaryNum];
+  extraSearch = extraordinaryAbilities[20][extraordinaryNum].trim().split(" ");
   drawBacks = populaceDrawbacks[randN(20)];
 
   thePhysical.innerText = "A interesting physical feature they possess are " + physChar;
+  thePhysicalDetails.innerHTML = physSearch.map(fysical =>
+    '<button class="brick" onclick="physicalMagic(' + `'${fysical}'` + ')">' + fysical.replace(/_/g, " ") + '</button>'
+    ).join('');
   theExtra.innerText = "These people also possess " + extraOrdAbil;
+  if (physicalNum < 14) {
+    
+  }
   theDrawBack.innerText = "Unfortunitly they suffer from " + drawBacks;
 };
 
