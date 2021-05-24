@@ -516,26 +516,26 @@ const definingIndustries = [
 
 //Table 15:
 const virtuesVices = [
-  "Courage",
-  "Addictive",
-  "Spiritual",
-  "Cowardice",
-  "Materialistic",
-  "Temperate",
-  "Witty",
-  "Pacifistic",
-  "Tyrannical",
-  "Honest",
-  "Melancholy",
-  "Benevolent",
-  "Xenophilic",
-  "Deceptive",
-  "Decadent",
-  "Gentle",
-  "Confrontational",
-  "Xenophobic",
-  "Industrious",
-  "Cruel"
+  "Courage: The people of this society are known for their ability to overcome fear and take action when it is necessary.",
+  "Addiction: This society is known for a powerful addiction that grips them.",
+  "Spiritual: The people of this society are known for their devotion to a higher power and pursuits of transcendental rather than material.",
+  "Cowardice: As a whole, the people are viewed as unable to face danger, fear or adversity.",
+  "Materialistic: The people of this society are concerned with the tangible and wealth, what they can have and hold rather than the ethereal.",
+  "Temperate: The people are renowned as disciplined and even-tempered even in the face of terrible danger.",
+  "Witty: Seen as clever and amusing people capable of quick, sharp retorts.",
+  "Pacifistic: The people are seen as peaceful and opposed to bloody conflicts.",
+  "Tyrannical: The people are renowned for being oppressive, calculating and controlling.",
+  "Honest: The people are known for being open, sincere and forthcoming.",
+  "Melancholy: The people have a reputation for being lost in sorrow and gloomy.",
+  "Benevolent: The people of this society are known for kindness and well meaning charity.",
+  "Xenophilic: The people are known for being open and receptive to dealing with foreigners, even attracted and enamored with their cultures and people.",
+  "Deceptive: The people have a reputation for being untrustworthy and tricky.",
+  "Decadent: The people are marked as suffering a decline in moral, mental and societal standards.",
+  "Gentle: The people of this society are reputed to be merciful and lenient in their behavior with others.",
+  "Confrontational: The people have a reputation of being aggressive and hostile with others.",
+  "Xenophobic: The people are seen as closed off and prejudiced against foreigners, even directing violence and undue agression towards anyone they see a different.",
+  "Industrious: The people are known for being hard-working and determined.",
+  "Cruel: The people are reputed to willfully cause pain to others indifferently, engaging in vicious behavior to others."
 ]
 
 let phys = {
