@@ -15,16 +15,17 @@ const thePhysicalButtons = document.getElementById('physicalButtons');
 const thePhysicalDetails = document.getElementById('physicalDetails');
 const theExtra = document.getElementById('extra');
 const theExtraButtons = document.getElementById('extraButtons');
-const theExtraDetails = document.getElementById('extraDetails')
+const theExtraDetails = document.getElementById('extraDetails');
 const theDrawBack =  document.getElementById('drawBacks');
 // Culture and belief ids
-const theTech = document.getElementById('technology')
-const theIndust = document.getElementById('definingIndustries')
-const theGovern = document.getElementById('government')
-const theLeaderQ = document.getElementById('leaderQuirks')
-const theMilQuirks = document.getElementById('milQuirks')
-const theCultQuiks = document.getElementById('culQuirks')
-const theSupersti = document.getElementById('supersti')
+const theTech = document.getElementById('technology');
+const theIndust = document.getElementById('definingIndustries');
+const theGovern = document.getElementById('government');
+const theLeaderQ = document.getElementById('leaderQuirks');
+const theMilQuirks = document.getElementById('milQuirks');
+const theCultQuiks = document.getElementById('culQuirks');
+const theSupersti = document.getElementById('supersti');
+const theVice = document.getElementById('vAndV')
 
 let userChoice = {
 
@@ -538,9 +539,6 @@ const virtuesVices = [
   "Cruel: The people are reputed to willfully cause pain to others indifferently, engaging in vicious behavior to others."
 ]
 
-let phys = {
-  Head: ["Extra", "Cosmetic", "Combat"]
-}
 
 // ===================== Code SECTION =====================================
 
@@ -647,6 +645,7 @@ const whatTheyBelieve = () => {
   military = militaryQuirks[randN(20)]
   culture  = culturalQuirks[randN(20)]
   superstition = superstitions[randN(20)]
+  viceOrVirts = virtuesVices[randN(20)]
 
   theTech.innerText  = "The peoples technological level is " + techno;
   theIndust.innerText = "Their definitive Industry is " + industrial;
@@ -655,6 +654,7 @@ const whatTheyBelieve = () => {
   theMilQuirks.innerText = "Their military beliefs way heavy on " + military;
   theCultQuiks.innerText = "Their have adopted " + culture;
   theSupersti.innerText = "A odd belief has spread in this sociaty " + superstition;
+  theVice.innerText = viceOrVirts;
 
 }
 
