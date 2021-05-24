@@ -673,7 +673,7 @@ const whatTheyBelieve = () => {
   theMilQuirks.innerText = "Their military beliefs way heavy on " + military;
   theCultQuiks.innerText = "Their have adopted " + culture;
   theSupersti.innerText = "A odd belief has spread in this sociaty " + superstition;
-  theVice.innerText = "A core behavior of these peopel is " + viceOrVirts;
+  theVice.innerText = "A core behavior of these people is " + viceOrVirts;
 
 }
 
