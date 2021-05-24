@@ -4,8 +4,10 @@
 // world html ids
 const theWorld = document.getElementById('theWorld');
 const theZones = document.getElementById('zones');
+const theZoneDetails = document.getElementById('zoneDetails')
 const theLandFeats = document.getElementById('landscapeFeats')
 const theLocalScope = document.getElementById('localScope')
+const thePlanet = document.getElementById('planet')
 // the People html ids
 const thePopulace = document.getElementById('populace');
 const thePhysical = document.getElementById('physical');
@@ -80,7 +82,29 @@ const sizes = {
 
 //Table 3: Physical Characteristics 20
 const physicalCharacteristics = [
-    "Head Variants", "Arm Variants", "Leg Variants", "Eye Variants", "Ear Variants", "Tongue Variants", "Mouth Variants", "Skin Color Variants", "Skin Texture Variants", "Hand Variants", "Animal Forms", "Extra Organs", "Extreme Appearance", "Non-Solid Form", "Tail", "Wings", "Chynerid", "Proxy Sense", "Long Limbs", "Fins"
+    "Head Variants", "Arm Variants", "Leg Variants", "Eye Variants", "Ear Variants", "Tongue Variants", "Mouth Variants", "Skin Color Variants", "Skin Texture Variants", "Hand Variants", "Animal Forms", "Extra Organs", "Extreme Appearance", "Non-Solid Form", "Tail", "Wings", "Chynerid", "Proxy Sense", "Long Limbs", "Fins",
+    {
+      0: "Extra_Heads Cosmetic_Adornments Combat_Adornments",
+      1: "Extra_Arms Tentacles Diarthrotic_Joints",
+      2: "Extra_Legs Predatory_Legs Ungulate_Legs",
+      3: "Insectoid Predatory_Cat Extra_Eyes",
+      4: "",
+      5: "",
+      6: "",
+      7: "",
+      8: "",
+      9: "",
+      10: "",
+      11: "",
+      12: "",
+      13: "",
+      14: "",
+      15: "",
+      16: "",
+      17: "",
+      18: "",
+      19: ""
+    }
 ];
 
 // For Table 3
@@ -431,6 +455,10 @@ let phys = {
 
 //console.log (populace[5])
 
+let setState = {
+  zoneDetail: ""
+}
+
 const randN = (x) => {
     let min = 0,
         max = x,
@@ -439,8 +467,17 @@ const randN = (x) => {
     // console.log(score);
 };
 
-const whereUFrom = (x) => {
-  num = x // right now this does nothing but it will dictate how many featured locations there are. 
+const zoneMagic = (z) => {
+  if (z == setState.zoneDetail) {
+    theZoneDetails.innerText = "";
+  } else {
+    setState.zoneDetail = z
+    theZoneDetails.innerText = zones[z]
+  }
+};
+
+const whereUFrom = (y) => {
+  num = y // right now this does nothing but it will dictate how many featured locations there are. 
   first = randN(8)
   climate1 = climate[first]
   mainZones = []
@@ -452,21 +489,22 @@ const whereUFrom = (x) => {
   if (searcher[0] === "Choose") {
     mainZones.push("Choose as you see fit!")
   } else {
-    for (i = 0; i < searcher.length; i++) {
-      x = searcher[i]
-      mainZones.push(x + ": " + zones[x])
-    };
+      theZones.innerHTML = searcher.map(zon => 
+        '<button class="brick" onclick="zoneMagic(' + `'${zon}'` + ')">' + zon.replace(/_/g, ' ') + '</button>'
+        ).join('');
+      thePlanet.innerHTML = searcher.map(zon => 
+        '<p class="planet">' + `${zon.replace(/_/g, ' ')}` + '</p>').join('');
   };
-  theZones.innerText = "The main Climate zones of your " + climate1 + " world are:"  + "\n" + climate[8][first].replace(/ /g, ', ') .replace(/_/g, ' ');
-  theLandFeats.innerText = "A feature landscape of this world is " + landFeats;
-  theLocalScope.innerText  =  scope;
+  // theZones.innerText = "The main Climate zones of your " + climate1 + " world are:"  + "\n" + climate[8][first].replace(/ /g, ', ') .replace(/_/g, ' ');
+  theLandFeats.innerText = "A feature landscape of their " + scope + " is " + landFeats;
+  theLocalScope.innerText  =  "Right now their civilization fits on a " + scope;
 };
 
 const whoBeHere = (a)=> {
   pop = a
   if (a == true) {
     populace1 = populace[randN(10)];
-    thePopulace.innerText = "The people are " + populace1;
+    thePopulace.innerText = "The people are " + populace1 + " in size \n" + "(" + sizes[populace1] + ")";
   }
   
   physChar = physicalCharacteristics[randN(20)];
@@ -501,6 +539,5 @@ const generate = () => {
   whereUFrom()
   whoBeHere(true)
   whatTheyBelieve()
-
-}
+};
 

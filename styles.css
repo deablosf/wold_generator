@@ -21,3 +21,15 @@ p{
   text-align: center;
   
 }
+
+#zones {
+  width: 40vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.planet {
+  color: antiquewhite;
+  font-size: 15px;
+}
