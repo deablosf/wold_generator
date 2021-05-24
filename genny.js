@@ -621,7 +621,6 @@ const whoBeHere = (a)=> {
   physChar = physicalCharacteristics[physicalNum];
   physSearch = physicalCharacteristics[20][physicalNum].trim().split(" ");
   extraOrdAbil = extraordinaryAbilities[extraordinaryNum];
-  extraSearch = extraordinaryAbilities[20][extraordinaryNum].trim().split(" ");
   drawBacks = populaceDrawbacks[randN(20)];
 
   thePhysical.innerText = "A interesting physical feature they possess are " + physChar;
@@ -629,7 +628,8 @@ const whoBeHere = (a)=> {
     '<button class="brick" onclick="physicalMagic(' + `'${fysical}'` + ')">' + fysical.replace(/_/g, " ") + '</button>'
     ).join('');
   theExtra.innerText = "These people also possess " + extraOrdAbil;
-  if (physicalNum < 14) {
+  if (extraordinaryNum < 14) {
+    extraSearch = extraordinaryAbilities[20][extraordinaryNum].trim().split(" ");
     theExtraButtons.innerHTML = extraSearch.map(extra => 
       '<button class="brick" onclick="extraMagic(' + `'${extra}'` + ')">' + extra.replace(/_/g, " ") + '</button>'
     ).join('');
