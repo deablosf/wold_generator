@@ -1,8 +1,28 @@
-p{
-    margin-bottom: 1vh;
+#world {
+  
+  width: 65vw;
 }
 
-.cirlce-border-wrap {
+#thePeople {
+  
+  width: 65vw;
+}
+
+#beliefs {
+  
+  width: 65vw;
+}
+
+h3 {
+  padding: 1.5vh;
+}
+
+p{
+    margin-bottom: 1vh;
+    
+}
+
+.circle-border-wrap {
   width: 31vw;
   height: 31vh;
   align-items: center;
@@ -11,7 +31,7 @@ p{
   
 }
 
-.cirlce{ 
+.circle{ 
   width: 30vw;
   height: 30vh;
   background: blue;
