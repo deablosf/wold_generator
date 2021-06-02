@@ -684,17 +684,17 @@ const whatTheyBelieve = () => {
 const generate = () => {
   if (theChckWorld.checked == true) {
     whereUFrom()
-    document.getElementById('hWorld') = "The World"
+    document.getElementById('hWorld').innerText = "The World"
   }
 
   if (theChckPeople.checked == true) {
     whoBeHere(true)
-    document.getElementById('hPeople') = "The People"
+    document.getElementById('hPeople').innerText = "The People"
   }
 
   if (theChckBelief.checked == true) {
     whatTheyBelieve()
-    document.getElementById('hBeliefs') = "The Beliefs"
+    document.getElementById('hBeliefs').innerText = "The Beliefs"
   }
 };
 
