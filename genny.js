@@ -1,5 +1,6 @@
 // Okay This will be a culture generator
-// Now lets turn the first five into a working thing!
+// Now lets turn the first five into a working thing! Done
+// Build a clear function for generate
 
 // world html ids
 const theWorld = document.getElementById('theWorld');
