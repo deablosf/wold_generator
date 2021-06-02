@@ -25,7 +25,11 @@ const theLeaderQ = document.getElementById('leaderQuirks');
 const theMilQuirks = document.getElementById('milQuirks');
 const theCultQuiks = document.getElementById('culQuirks');
 const theSupersti = document.getElementById('supersti');
-const theVice = document.getElementById('vAndV')
+const theVice = document.getElementById('vAndV');
+// Generator checkbox choices
+const theChckWorld = document.getElementById('aWorld');
+const theChckPeople = document.getElementById('aPeople');
+const theChckBelief = document.getElementById('aBelief');
 
 let userChoice = {
 
@@ -678,8 +682,19 @@ const whatTheyBelieve = () => {
 }
 
 const generate = () => {
-  whereUFrom()
-  whoBeHere(true)
-  whatTheyBelieve()
+  if (theChckWorld.checked == true) {
+    whereUFrom()
+    document.getElementById('hWorld') = "The World"
+  }
+
+  if (theChckPeople.checked == true) {
+    whoBeHere(true)
+    document.getElementById('hPeople') = "The People"
+  }
+
+  if (theChckBelief.checked == true) {
+    whatTheyBelieve()
+    document.getElementById('hBeliefs') = "The Beliefs"
+  }
 };
 

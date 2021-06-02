@@ -7,12 +7,20 @@
   <title>Genny</title>
 </head>
 <body>
+    <input type="checkbox" id="aWorld" name="aWorld" value="">
+    <label for="aWorld">Generate World</label>
+
+    <input type="checkbox" id="aPeople" name="aPeople" value="">
+    <label for="aPeople">Generate People</label>
+
+    <input type="checkbox" id="aBelief" name="aBelief" value="">
+    <label for="aBelief">Generate Peoples Society</label>
     <div>
         Generate Your World -->
         <button id="gen"  onclick="generate()">Make Me A World</button>
     </div>
     <div id="world">
-      <h3 id="">Your World</h3>
+      <h3 id="hWorld"></h3>
       <p id="theWorld"></p>
       <p id="zones"></p>
       <p id="zoneDetails"></p>
@@ -26,7 +34,7 @@
     </div>
     
     <div id="thePeople">
-      <h3 id="">Your People</h3>
+      <h3 id="hPeople"></h3>
       <p id="populace"></p>
       <p id="physical"></p>
       <p id="physicalButtons"></p>
@@ -38,7 +46,7 @@
     </div>
     
     <div id="beliefs">
-      <h3 id="">Your People</h3>
+      <h3 id="hBeliefs"></h3>
       <p id="technology"></p>
       <p id="definingIndustries"></p>
       <p id="government"></p>
