@@ -1,6 +1,6 @@
 // Okay This will be a culture generator
 // Now lets turn the first five into a working thing! Done
-// Build a clear function for generate
+// Build a clear function for generate Not done
 
 // world html ids
 const theWorld = document.getElementById('theWorld');
@@ -31,6 +31,9 @@ const theVice = document.getElementById('vAndV');
 const theChckWorld = document.getElementById('aWorld');
 const theChckPeople = document.getElementById('aPeople');
 const theChckBelief = document.getElementById('aBelief');
+// All Selectors
+const thePAll = document.querySelectorAll("p");
+const theH3 = document.querySelectorAll('h3')
 
 let userChoice = {
 
@@ -63,10 +66,10 @@ const zones = {
   Frozen: "Self explantory, absolutely frozen. The weather is rarely, if ever, above -200 and usually hovers around -250 to -300 though colder areas can reach -400F. This extreme climate zone cannot sustain life as we recognize it (outside of the tardigrade). The only landmarks are glaciers and ice.",
   Hyperborean: "This weather pattern is excessively cold, but not life here is not impossible though it does require effort, equipment and planning. In this unforgiving climate temperatures hover around -75F though it can dip down to around -150F, while the temperature can reach up to 60F rarely, it is in those 'oasis-like' areas that communities grow. Winds can reach supersonic speeds across the icy terrain and polar vortexes can be pointed to as the culprits of the steep climate drops.",
   Ice_Cap: "The ice caps of the north are surpringly more forgiving than the frigid south. Temperatures can drop to -50F, it hovers roughly around 32F. It is still cold but life can grow and find sustenance here. The growing seasons are short here and there are no trees on the tundra but grasses and moss grow, feeding the foundational herbivores of the life cycle.",
-  Boreal: "The cold eases somewhat allowing for the growth of enduring evergreens, grass, large deers like the caribou roam in herds in temperatures that range from -50F in the coldest depths of winter to 77F in the heat of the summer. While not for the faint, this climate zone does provide sustenance and home for the hearty.",
-  Temperate: "A wide range of temperatures and climates fit within this zone from dry summers with mild winters to hot summers that hoard the majority of rainfall with cold winters. There will be areas that have varying high and low temperature with rain and snow spread through the four seasons. Tornadoes, Thunderstorms, Monsoons; any of these phenomenon can be found in this climate zone with an equal variety of creatures. Agriculture is a big thing in this climate.",
+  Boreal: "The cold eases somewhat allowing for the growth of enduring evergreens, grass and large deers like the caribou roam in herds in temperatures that range from -50F in the coldest depths of winter to 77F in the heat of the summer. While not for the faint, this climate zone does provide sustenance and home for the hearty.",
+  Temperate: "A wide range of temperatures and climates fit within this zone from dry summers with mild winters to hot summers that hoard the majority of rainfall with cold winters. There will be areas that have varying high and low temperatures with rain and snow spread through the four seasons. Tornadoes, Thunderstorms, Monsoons; any of these phenomenon can be found in this climate zone with an equal variety of creatures. Agriculture is a big thing in this climate.",
   Dry: "The steppes and  plains. This climate zone is home to tall grass, shrubs and herbs with very few trees; the temperatures ranging from -4F in the deep winter to almost 90F in the summer. Bison, rattlesnakes, wolf packs and a number of rodents; these are a taste of the teeming life found in the dry climate zone.",
-  Tropical: "Marked with a wet season and a dry season rather than summer and winter, the temperatures here are higher all year long on average hitting around 65F. While the temperature may not rise high, topping out usually just under 90F, these lands are humid and thick. It can make for uncomfortable living at times. The forests can be dense and hard to traverse or it can be more open with high amount of rain through the year but certain areas will be drought heavy with tall grass, shrubs and trees only growing near flowing water sources. Snakes, primates and large cats are found here with lions and zebras or crocodiles found in the drier regions.",
+  Tropical: "Marked with a wet season and a dry season rather than summer and winter, the temperatures here are higher all year long on average hitting around 65F. While the temperature may not rise high, topping out usually just under 90F, these lands are humid and thick. It can make for uncomfortable living at times. The forests can be dense and hard to traverse or it can be more open with a high amount of rain through the year but certain areas will be drought heavy with tall grass, shrubs and trees only growing near flowing water sources. Snakes, primates and large cats are found here with lions and zebras or crocodiles found in the drier regions.",
   Torrid: "A climate zone with hostile living conditions, little to no rainfall for long stretches of the year and land that has been worn down to sand by dry, searing winds. Only special plants and animals live in these conditions and growing food will require special planning and equipment but it is not impossible. The daily temperature is over 100F during the day, dropping to around 25F at night. Dunes of sand, rocks and occassional plant life adapted to this harsh climate identify the region.",
   Molten: "This climate zone is made of still molten, melted rock. Magma flows over itself churning and roiling as far as the eye can see. Occassional land pockets of active volcanos dot the region. It's not all smoke and ash though, there are sometimes storms of acid rain and volcanic smog to offer a change of pace. This region boasts temperatures over 150F and averages at 250F and is uteerly inhabitable by most organisms."
 }
@@ -288,7 +291,7 @@ const extraordinaryTable = {
   Swimming: "Swimming: All members of this species can move through fluids with little difficulty, displaying gymnastic flair and respectable speeds equal to their running capabilities on solid land. They can swiftly make turns and adjust to avoid obstacles even fully submerged though they cannot breathe underwater and water pressure can be a terrible and lethal burden for them.",
   Levitation: "Levitation: The species can take off from the ground on the 'X-axis' only. They can up or back down but they cannot travel on the 'y-axis' to go forward or back while doing so, at least not of their own power. They can levitate and be carried or ride something else's momentum. While levitating, the creature weighs only one-tenth of their normal weight.",
   Flight: "Flight: Unlike levitation, which is only up or down, this ability is full range of motion. The species can take off, move forward, back and side to side. They may not be the most graceful beings in air, this ability is almost like swimming but through the sky. With practice and effort, a member can learn to move with grace and speed. Some creatures will have wings to supplement this while others species simply find that gravity stands as a poor shackle to their physical forms either way, the species with this ability can fly as quickly as most cars, reaching speeds of one hundred and twenty miles an hour. Low density creatures can increase this speed to over five hundred miles per hour while beings with wings can increase their speeds by an additional fifty percent.",
-  Swimming_Alt: "Swimming: While the species may not be the most agile or the most graceful, they can swim in any fluid with equal ease, at incredible speeds and have an resistance to fluid pressure. This ability does not protect the species from any adverse effects of the liquid itself, so acid, lava, radioactive waste etc. would still possibly kill or hurt the species without some form of protection. Regardless of how viscous the fluid is though, the species moves through it with little to no resistance and can move through the deep levels of an",
+  Swimming_Alt: "Swimming: While the species may not be the most agile or the most graceful, they can swim in any fluid with equal ease, at incredible speeds and have an resistance to fluid pressure. This ability does not protect the species from any adverse effects of the liquid itself, so acid, lava, radioactive waste etc. would still possibly kill or hurt the species without some form of protection. Regardless of how viscous the fluid is though, the species moves through it with little to no resistance and can move through the deep levels of even a tar pit with only a modicum of difficulty.",
   X_Ray: "X-Ray: The species can see through solid matter though denser materials are resistant to this, making it hard until an item is too dense to see through. Hiding in the standard manner is powerless against such vision is extremely difficult.",
   Energy_Sight: "Energy Sight: The species can see the radiation of elemental energies. From heat or radiation to light and gravity, the species can see the ebb and flow of these energies as easily as a human can see fire.",
   Dark_Sight: "Dark Sight: The species can see perfectly clear even in the deepest natural darkness. Supranatural darkness is less effective, shortening the species field of view as though they were out in a full moon with no additional lights.",
@@ -683,6 +686,8 @@ const whatTheyBelieve = () => {
 }
 
 const generate = () => {
+  thePAll.innerText = ""
+  theH3.innerText = ""
   if (theChckWorld.checked == true) {
     whereUFrom()
     document.getElementById('hWorld').innerText = "The World"
