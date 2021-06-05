@@ -686,8 +686,12 @@ const whatTheyBelieve = () => {
 }
 
 const generate = () => {
-  thePAll.innerText = ""
-  theH3.innerText = ""
+  for (x = 0; x < thePAll.length; x++) {
+    thePAll[x].innerText = "";
+  }
+  for (y = 0; y < theH3.length; y++) {
+    theH3[y].innerText = "";
+  }
   if (theChckWorld.checked == true) {
     whereUFrom()
     document.getElementById('hWorld').innerText = "The World"
