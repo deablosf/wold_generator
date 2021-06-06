@@ -621,7 +621,7 @@ const whereUFrom = (y) => {
   scope = locationScope[randN(6)]
   searcher = climate[8][first].trim().split(" ");
 
-  theWorld.innerText = "Your World is a " + climate1 + " world. ";
+  theWorld.innerText = "This World is a " + climate1 + " world. ";
   if (searcher[0] === "Choose") {
     mainZones.push("Choose as you see fit!")
   } else {
@@ -632,7 +632,7 @@ const whereUFrom = (y) => {
         '<p class="planet">' + `${zon.replace(/_/g, ' ')}` + '</p>').join('');
   };
   // theZones.innerText = "The main Climate zones of your " + climate1 + " world are:"  + "\n" + climate[8][first].replace(/ /g, ', ') .replace(/_/g, ' ');
-  theLandFeats.innerText = "A feature landscape of their " + scope + " is " + landFeats;
+  theLandFeats.innerText = "A feature landscape of their " + scope.split("(", 1) + " is " + landFeats;
   theLocalScope.innerText  =  "Right now their civilization fits on a " + scope;
 };
 
@@ -650,18 +650,18 @@ const whoBeHere = (a)=> {
   extraOrdAbil = extraordinaryAbilities[extraordinaryNum];
   drawBacks = populaceDrawbacks[randN(20)];
 
-  thePhysical.innerText = "A interesting physical feature they possess are " + physChar;
+  thePhysical.innerText = "A physical feature they possess: " + physChar;
   thePhysicalButtons.innerHTML = physSearch.map(fysical =>
     '<button class="brick" onclick="physicalMagic(' + `'${fysical}'` + ')">' + fysical.replace(/_/g, " ") + '</button>'
     ).join('');
-  theExtra.innerText = "These people also possess " + extraOrdAbil;
+  theExtra.innerText = "They also possess " + extraOrdAbil;
   if (extraordinaryNum < 14) {
     extraSearch = extraordinaryAbilities[20][extraordinaryNum].trim().split(" ");
     theExtraButtons.innerHTML = extraSearch.map(extra => 
       '<button class="brick" onclick="extraMagic(' + `'${extra}'` + ')">' + extra.replace(/_/g, " ") + '</button>'
     ).join('');
   }
-  theDrawBack.innerText = "Unfortunitly they suffer from " + drawBacks;
+  theDrawBack.innerText = "They suffer from " + drawBacks;
 };
 
 const whatTheyBelieve = () => {
