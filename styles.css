@@ -13,8 +13,9 @@
   width: 65vw;
 }
 
-h3 {
-  padding: 1.5vh;
+h2 {
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
 }
 
 p{

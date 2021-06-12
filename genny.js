@@ -681,14 +681,14 @@ const whatTheyBelieve = () => {
   superstition = superstitions[randN(20)]
   viceOrVirts = virtuesVices[randN(20)]
 
-  theTech.innerText  = "The peoples technological level is " + techno;
-  theIndust.innerText = "Their definitive Industry is " + industrial;
-  theGovern.innerText = "Their form of Government is " + govern;
-  theLeaderQ.innerText = "The leaders of your people follow " + leadership;
-  theMilQuirks.innerText = "Their military beliefs way heavy on " + military;
-  theCultQuiks.innerText = "Their have adopted " + culture;
-  theSupersti.innerText = "A odd belief has spread in this sociaty " + superstition;
-  theVice.innerText = "A core behavior of these people is " + viceOrVirts;
+  theTech.innerText  = "Their technological level \n" + techno;
+  theIndust.innerText = "Their definitive Industry \n" + industrial;
+  theGovern.innerText = "Their Government \n" + govern;
+  theLeaderQ.innerText = "Their leaders \n" + leadership;
+  theMilQuirks.innerText = "Their military \n" + military;
+  theCultQuiks.innerText = "Their culture \n" + culture;
+  theSupersti.innerText = "Their Superstition \n " + superstition;
+  theVice.innerText = "Their Vice \n" + viceOrVirts;
 
 }
 
@@ -713,7 +713,7 @@ const generate = () => {
 
   if (theChckBelief.checked == true) {
     whatTheyBelieve()
-    document.getElementById('hBeliefs').innerText = "The Beliefs"
+    document.getElementById('hBeliefs').innerText = "The Society"
   }
 };
 
