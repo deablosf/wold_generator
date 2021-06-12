@@ -613,6 +613,7 @@ const extraMagic = (z) => {
 };
 
 const whereUFrom = (y) => {
+  thePlanet.removeAttribute('class')
   num = y // right now this does nothing but it will dictate how many featured locations there are. 
   first = randN(8)
   climate1 = climate[first]
@@ -620,20 +621,26 @@ const whereUFrom = (y) => {
   landFeats = landscapeFeatures[randN(20)]
   scope = locationScope[randN(6)]
   searcher = climate[8][first].trim().split(" ");
+  planet = "ball" + climate1;
 
+  thePlanet.style.removeProperty('display')
   theWorld.innerText = "This World is a " + climate1 + " world. ";
   if (searcher[0] === "Choose") {
-    mainZones.push("Choose as you see fit!")
+    mainZones.push("Choose Your Own Climate Zones!")
+    thePlanet.classList.add('ballCustom')
+    thePlanet.innerHTML = '<div class="planetCust">' + `<b>?</b>` + '</div>';
   } else {
+    thePlanet.style.removeProperty('display')
       theZones.innerHTML = searcher.map(zon => 
         '<button class="brick" onclick="zoneMagic(' + `'${zon}'` + ')">' + zon.replace(/_/g, ' ') + '</button>'
         ).join('');
       thePlanet.innerHTML = searcher.map(zon => 
-        '<p class="planet">' + `${zon.replace(/_/g, ' ')}` + '</p>').join('');
+        '<div class="planet">' + `${zon.replace(/_/g, ' ')}` + '</div>').join('');
   };
   // theZones.innerText = "The main Climate zones of your " + climate1 + " world are:"  + "\n" + climate[8][first].replace(/ /g, ', ') .replace(/_/g, ' ');
   theLandFeats.innerText = "A feature landscape of their " + scope.split("(", 1) + " is " + landFeats;
   theLocalScope.innerText  =  "Right now their civilization fits on a " + scope;
+  thePlanet.classList.add(planet)
 };
 
 const whoBeHere = (a)=> {
@@ -695,6 +702,8 @@ const generate = () => {
   if (theChckWorld.checked == true) {
     whereUFrom()
     document.getElementById('hWorld').innerText = "The World"
+  } else {
+    thePlanet.style.display = "none"
   }
 
   if (theChckPeople.checked == true) {
@@ -708,3 +717,4 @@ const generate = () => {
   }
 };
 
+thePlanet.style.display = "none"

@@ -22,24 +22,38 @@ p{
     
 }
 
-.circle-border-wrap {
-  width: 31vw;
-  height: 31vh;
-  align-items: center;
-  background: linear-gradient(to bottom, rgb(173, 173, 241), rgb(46, 231, 206), rgb(34, 243, 34), rgb(16, 97, 16), rgb(34, 243, 34), rgb(46, 231, 206), rgb(173, 173, 241));
-  border-radius: 50%;
-  
+
+.wrapper {
+  width: 40px;
+  height: 20px;
+  margin: 100px;
+  perspective: 800px;
+  perspective-origin: 50% 50%;
+  position: relative;
+}
+.stage {
+  transform-style: preserve-3d;
+  position: absolute;
+  transform: translate3d(-50%, -50%, 0);
 }
 
-.circle{ 
-  width: 30vw;
-  height: 30vh;
-  background: blue;
+#planet {
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  font-size: 13px;
-  color: rgb(2, 0, 0);
-  text-align: center;
-  
+  transform: translate3d(-50%, -50%, 0);
+  box-shadow: 0px 55px 45px -38px rgba(0, 0, 0, .3);
+}
+#planet::before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: -webkit-radial-gradient(5% 0px, circle, #ffffff, rgba(255, 255, 255, 0) 58%);
+  z-index: 2;
 }
 
 #zones {
@@ -50,6 +64,98 @@ p{
 }
 
 .planet {
-  color: antiquewhite;
-  font-size: 15px;
+  color: black;
+  font-size: 14px;
+  padding-left: 69px;
+  padding-top: 4px;
+}
+
+.planetCust {
+  color: black;
+  font-size: 80px;
+  padding-left: 80px;
+  padding-top: 40px;
+}
+
+
+/*     BALLS      */
+
+.ballStandard {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, rgb(34, 48, 243), rgb(34, 159, 243), rgb(34, 243, 208), rgb(64, 177, 30), rgb(34, 243, 34), rgb(64, 177, 30), rgb(40, 226, 102), rgb(111, 223, 208), rgb(220, 220, 240));
+  position: absolute;
+  transform: translate3d(-50%, -50%, 0);
+  box-shadow: 0px 55px 45px -38px rgba(0, 0, 0, .3);
+}
+
+.ballInfernal {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, rgb(40, 226, 102), rgb(64, 177, 30), rgb(34, 243, 34), rgb(222, 243, 34), rgb(243, 93, 34), rgb(243, 93, 34), rgb(223, 192, 17), rgb(34, 243, 34),rgb(113, 177, 30), rgb(152, 243, 34));
+  position: absolute;
+  transform: translate3d(-50%, -50%, 0);
+  box-shadow: 0px 55px 45px -38px rgba(0, 0, 0, .3);
+}
+
+.ballSweltering {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, rgb(34, 159, 243), rgb(34, 243, 208), rgb(34, 243, 121), rgb(34, 243, 34), rgb(222, 243, 34), rgb(222, 243, 34), rgb(34, 243, 34), rgb(34, 243, 121), rgb(34, 243, 208), rgb(34, 159, 243));
+  position: absolute;
+  transform: translate3d(-50%, -50%, 0);
+  box-shadow: 0px 55px 45px -38px rgba(0, 0, 0, .3);
+}
+
+.ballFrosty {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, rgb(114, 34, 243), rgb(34, 48, 243), rgb(34, 159, 243), rgb(34, 243, 208), rgb(34, 243, 121), rgb(34, 243, 121), rgb(34, 243, 208), rgb(34, 159, 243), rgb(34, 48, 243), rgb(114, 34, 243));
+  position: absolute;
+  transform: translate3d(-50%, -50%, 0);
+  box-shadow: 0px 55px 45px -38px rgba(0, 0, 0, .3);
+}
+
+.ballFimbulfrost {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, rgb(166, 34, 243), rgb(114, 34, 243), rgb(34, 48, 243), rgb(34, 159, 243), rgb(34, 243, 208), rgb(34, 243, 208), rgb(34, 159, 243), rgb(34, 48, 243), rgb(114, 34, 243), rgb(166, 34, 243));
+  position: absolute;
+  transform: translate3d(-50%, -50%, 0);
+  box-shadow: 0px 55px 45px -38px rgba(0, 0, 0, .3);
+}
+
+.ballMolten {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, rgb(222, 243, 34), rgb(243, 93, 34), rgb(243, 93, 34), rgb(243, 93, 34), rgb(243, 93, 34), rgb(243, 93, 34), rgb(243, 93, 34), rgb(243, 93, 34), rgb(243, 93, 34), rgb(223, 192, 17));
+  position: absolute;
+  transform: translate3d(-50%, -50%, 0);
+  box-shadow: 0px 55px 45px -38px rgba(0, 0, 0, .3);
+}
+
+.ballIce {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, rgb(166, 34, 243), rgb(166, 34, 243), rgb(166, 34, 243), rgb(166, 34, 243), rgb(114, 34, 243), rgb(114, 34, 243), rgb(166, 34, 243), rgb(166, 34, 243), rgb(166, 34, 243), rgb(166, 34, 243));
+  position: absolute;
+  transform: translate3d(-50%, -50%, 0);
+  box-shadow: 0px 55px 45px -38px rgba(0, 0, 0, .3);
+}
+
+.ballCustom {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #ccc;
+  position: absolute;
+  transform: translate3d(-50%, -50%, 0);
+  box-shadow: 0px 55px 45px -38px rgba(0, 0, 0, .3);
 }
