@@ -612,6 +612,18 @@ const extraMagic = (z) => {
   }
 };
 
+let doubleList = (x) => {
+  newList = []
+  for (i = 0; i < x.length; i++) {
+    newList.push(x[i])
+  }
+  for (i = 3; i >= 0; i--) {
+    newList.push(x[i])
+  }
+
+  return newList
+}
+
 const whereUFrom = (y) => {
   thePlanet.removeAttribute('class')
   num = y // right now this does nothing but it will dictate how many featured locations there are. 
@@ -620,27 +632,29 @@ const whereUFrom = (y) => {
   mainZones = []
   landFeats = landscapeFeatures[randN(20)]
   scope = locationScope[randN(6)]
-  searcher = climate[8][first].trim().split(" ");
+  plantZones = climate[8][first].trim().split(" ");
   planet = "ball" + climate1;
+  finalList = doubleList(plantZones)
 
   thePlanet.style.removeProperty('display')
   theWorld.innerText = "This World is a " + climate1 + " world. ";
-  if (searcher[0] === "Choose") {
+  if (plantZones[0] === "Choose") {
     mainZones.push("Choose Your Own Climate Zones!")
     thePlanet.classList.add('ballCustom')
     thePlanet.innerHTML = '<div class="planetCust">' + `<b>?</b>` + '</div>';
   } else {
+    thePlanet.classList.add(planet)
     thePlanet.style.removeProperty('display')
-      theZones.innerHTML = searcher.map(zon => 
+      theZones.innerHTML = plantZones.map(zon => 
         '<button class="brick" onclick="zoneMagic(' + `'${zon}'` + ')">' + zon.replace(/_/g, ' ') + '</button>'
         ).join('');
-      thePlanet.innerHTML = searcher.map(zon => 
+      thePlanet.innerHTML = finalList.map(zon => 
         '<div class="planet">' + `${zon.replace(/_/g, ' ')}` + '</div>').join('');
   };
   // theZones.innerText = "The main Climate zones of your " + climate1 + " world are:"  + "\n" + climate[8][first].replace(/ /g, ', ') .replace(/_/g, ' ');
   theLandFeats.innerText = "A feature landscape of their " + scope.split("(", 1) + " is " + landFeats;
   theLocalScope.innerText  =  "Right now their civilization fits on a " + scope;
-  thePlanet.classList.add(planet)
+  
 };
 
 const whoBeHere = (a)=> {
@@ -690,7 +704,7 @@ const whatTheyBelieve = () => {
   theSupersti.innerText = "Their Superstition \n " + superstition;
   theVice.innerText = "Their Vice \n" + viceOrVirts;
 
-}
+};
 
 const generate = () => {
   for (x = 0; x < thePAll.length; x++) {
