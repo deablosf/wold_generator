@@ -33,7 +33,7 @@ const theChckPeople = document.getElementById('aPeople');
 const theChckBelief = document.getElementById('aBelief');
 // All Selectors
 const thePAll = document.querySelectorAll("p");
-const theH3 = document.querySelectorAll('h3')
+const theH3 = document.querySelectorAll('h2')
 
 let userChoice = {
 
