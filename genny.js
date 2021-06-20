@@ -9,6 +9,7 @@ const theZoneDetails = document.getElementById('zoneDetails');
 const theLandFeats = document.getElementById('landscapeFeats');
 const theLocalScope = document.getElementById('localScope');
 const thePlanet = document.getElementById('planet');
+const theWrapper = document.getElementById('wrapper');
 // the People html ids
 const thePopulace = document.getElementById('populace');
 const thePhysical = document.getElementById('physical');
@@ -707,6 +708,7 @@ const whatTheyBelieve = () => {
 };
 
 const generate = () => {
+  theWrapper.removeAttribute('class')
   for (x = 0; x < thePAll.length; x++) {
     thePAll[x].innerText = "";
   }
@@ -716,6 +718,7 @@ const generate = () => {
   if (theChckWorld.checked == true) {
     whereUFrom()
     document.getElementById('hWorld').innerText = "The World"
+    theWrapper.classList.add('wrapper')
   } else {
     thePlanet.style.display = "none"
   }
