@@ -4,4 +4,6 @@ World and culture generator created by DevX and edited by Ethereal Deep Diver(Sa
 With this script youcan generate worlds and the beings that inhabit them.
 DevX wrote out the generater to run off dice rolls; so I'm just cleaning it up and digitizing the process.
 
- Demo seems to worknow to clean up code.
+ Demo seems to work now to clean up code.
+
+ 
